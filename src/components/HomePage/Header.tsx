@@ -47,7 +47,7 @@ const Header = () => {
 			w='100%'
 			zIndex={1000}
 		>
-			<CustomContainer px={0} pt={5}>
+			<CustomContainer px={0} pt={0}>
 				<Flex
 					justify='space-between'
 					align='center'

@@ -10,17 +10,18 @@ import {
 import { HiMenu } from 'react-icons/hi'
 import Link from 'next/link' // or 'react-router-dom' if not using Next.js
 import PrimaryButton from '../reusable/PrimaryButton'
+import { navData } from '../data/navData'
 
-export const navData = [
-  { label: "SUMMER COLLECTIONS", href: "/summer-collections" },
-  { label: "NEW ARRIVALS", href: "/new-arrivals" },
-  { label: "MEN", href: "/men" },
-  { label: "WOMEN", href: "/women" },
-  { label: "KIDS", href: "/kids" },
-  { label: "REVIEWS", href: "/reviews" },
-  { label: "FOOTWEAR", href: "/footwear" },
-  { label: "ACCESSORIES", href: "/accessories" }
-]
+// export const navData = [
+//   { label: "SUMMER COLLECTIONS", href: "/summer-collections" },
+//   { label: "NEW ARRIVALS", href: "/new-arrivals" },
+//   { label: "MEN", href: "/men" },
+//   { label: "WOMEN", href: "/women" },
+//   { label: "KIDS", href: "/kids" },
+//   { label: "REVIEWS", href: "/reviews" },
+//   { label: "FOOTWEAR", href: "/footwear" },
+//   { label: "ACCESSORIES", href: "/accessories" }
+// ]
 
 const MobileNav = () => {
   const [open, setOpen] = useState(false)
