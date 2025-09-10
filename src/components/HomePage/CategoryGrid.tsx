@@ -1,36 +1,35 @@
 import React from 'react';
 import Link from 'next/link';
-import CategoryCard from '../reusable/CategoryCard';
-import { Box, Container, Grid } from '@chakra-ui/react';
-import SectionHeader from '../reusable/SectionHeader';
+import { Box, Grid } from '@chakra-ui/react';
 import CustomContainer from '../reusable/Container';
 import SectionHeader2 from '../reusable/SectionHeader2';
+import CategoryCard from '../reusable/CategoryCard';
 
-// JSON data for categories
 const categories = [
-	{ id: 'bags', title: 'Bags', image: '/category/cat-bag.jpg' },
-	{ id: 'accessories', title: 'Accessories', image: '/category/cat-accessories.jpg' },
-	{ id: 'watches', title: 'Watches', image: '/category/cat-watch.jpg' },
-	{ id: 'jewelry', title: 'Jewelry', image: '/category/cat-jewelry.jpg' },
-	{ id: 'modest-wear', title: 'Modest Wear', image: '/category/cat-modest-wear.jpg' },
-	{ id: 'sleep-wear', title: 'Sleep Wear', image: '/category/cat-sleep-wear.jpg' },
+	{ id: 'shoes', title: 'Shoes', icon: '/category/shoes.svg' },
+	{ id: 'bags', title: 'Bags', icon: '/category/cat-bag.svg' },
+	{ id: 'hijabs', title: 'Hijabs', icon: '/category/cat-modest-wear.svg' },
+	{
+		id: 'accessories',
+		title: 'Accessories',
+		icon: '/category/cat-accessories.svg',
+	},
+	{ id: 'watches', title: 'Watches', icon: '/category/watches.svg' },
+	{ id: 'jewelry', title: 'Jewelry', icon: '/category/cat-modest-wear.svg' },
 ];
 
 const CategoryGrid = () => (
 	<CustomContainer>
 		<Box>
-			<SectionHeader2 title='Shop By Category' />
+			<SectionHeader2 title='Featured Collections' />
 			<Grid
-				templateColumns={{
-					base: '1fr',
-					md: 'repeat(2, 1fr)',
-					lg: 'repeat(6, 1fr)',
-				}}
-				gap={6}
+				mx={{ base: 0, md: 0, lg: 16 }}
+				templateColumns='repeat(3, 1fr)' // always 3 columns
+				gap={{ base: 4, md: 6, lg: 8 }} // responsive spacing
 			>
 				{categories.map(category => (
 					<Link key={category.id} href={`/category/${category.id}`} passHref>
-						<CategoryCard image={category.image} title={category.title} />
+						<CategoryCard icon={category.icon} title={category.title} />
 					</Link>
 				))}
 			</Grid>
