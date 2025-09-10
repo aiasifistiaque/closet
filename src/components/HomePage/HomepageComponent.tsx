@@ -18,7 +18,7 @@ const HomepageComponent = () => {
 			{/* <CategoryShowcase /> */}
 			<ProductSection title='Premium Product' products={products} />
 			{/* <SpecialOfferss /> */}
-			{/* <BigDeals /> */}
+			{/* <BigDealss /> */}
 			{/* <PromotionalBanner /> */}
 		</PageLayout>
 	);
