@@ -109,7 +109,7 @@ const CategoryCard = ({ category }: { category: (typeof categories)[0] }) => (
 
 const CategoryGridNew = () => (
 	<Container
-		px={{ base: 4, md: 7, lg: 16, '2xl': 20 }}
+		px={{ base: 4, md: 7, lg: 20, '2xl': 20 }}
 		py={16}>
 		<Box
 			textAlign='center'

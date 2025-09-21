@@ -41,7 +41,7 @@ const Header = () => {
 				mt='32px'>
 				<CustomContainer
 					pt={0}
-					px={{ base: 4, md: 7, lg: 16, '2xl': 20 }}>
+					px={{ base: 4, md: 7, lg: 20, '2xl': 20 }}>
 					<Flex
 						justify='space-between'
 						align='center'
