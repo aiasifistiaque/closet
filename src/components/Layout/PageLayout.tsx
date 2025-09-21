@@ -18,10 +18,9 @@ const PageLayout: FC<PageLayoutProps> = ({ children, ...props }) => {
 				direction={'column'}
 				minH={'100vh'}
 				w={'full'}
-				pt={{base: '84px', md: '136px'}}
+				pt='0px'
 				pb='0px'
-				{...props}
-			>
+				{...props}>
 				{children}
 			</Flex>
 			<Footer />

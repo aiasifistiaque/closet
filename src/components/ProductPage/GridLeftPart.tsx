@@ -6,10 +6,14 @@ import {
 	IconButton,
 	Image,
 	VStack,
+	AspectRatio,
+	HStack,
 } from '@chakra-ui/react';
 import React, { FC, useRef, useState } from 'react';
 import { FiChevronLeft, FiChevronRight } from 'react-icons/fi';
+import { LuExpand } from 'react-icons/lu';
 import Slider from 'react-slick';
+import FullscreenImageModal from './FullscreenImageModal';
 
 type GridLeftPartProps = {
 	product: any;
@@ -25,15 +29,17 @@ const PrevArrow = (props: any) => {
 			onClick={onClick}
 			position='absolute'
 			top='50%'
-			left='10px'
+			left='8px'
 			transform='translateY(-50%)'
-			bg='blackAlpha.600'
-			color='white'
-			borderRadius='full'
-			_hover={{ bg: 'blackAlpha.700' }}
+			bg='white'
+			color='black'
+			size='sm'
+			boxShadow='md'
+			_hover={{ bg: 'gray.100' }}
 			zIndex={2}
-		>
-			<FiChevronLeft size={22} />
+			border='1px solid'
+			borderColor='gray.200'>
+			<FiChevronLeft size={16} />
 		</IconButton>
 	);
 };
@@ -46,158 +52,197 @@ const NextArrow = (props: any) => {
 			onClick={onClick}
 			position='absolute'
 			top='50%'
-			right='10px'
+			right='8px'
 			transform='translateY(-50%)'
-			bg='blackAlpha.600'
-			color='white'
-			borderRadius='full'
-			_hover={{ bg: 'blackAlpha.700' }}
+			bg='white'
+			color='black'
+			size='sm'
+			boxShadow='md'
+			_hover={{ bg: 'gray.100' }}
 			zIndex={2}
-		>
-			<FiChevronRight size={22} />
+			border='1px solid'
+			borderColor='gray.200'>
+			<FiChevronRight size={16} />
 		</IconButton>
 	);
 };
 
-const GridLeftPart: FC<GridLeftPartProps> = ({
-	product,
-	selectedImage,
-	setSelectedImage,
-}) => {
+const GridLeftPart: FC<GridLeftPartProps> = ({ product, selectedImage, setSelectedImage }) => {
 	const sliderRef = useRef<Slider | null>(null);
-	const [zoomStates, setZoomStates] = useState<{
-		[key: number]: {
-			isHovered: boolean;
-			transformOrigin: string;
-			scale: number;
-		};
-	}>({});
+	const [isHovered, setIsHovered] = useState(false);
+	const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
+	const [fullscreenIndex, setFullscreenIndex] = useState(0);
 
 	const handleThumbnailClick = (img: string, index: number) => {
 		setSelectedImage(img);
 		sliderRef.current?.slickGoTo(index);
 	};
 
-	const handleMouseEnter = (index: number) => {
-		setZoomStates(prev => ({
-			...prev,
-			[index]: {
-				...prev[index],
-				isHovered: true,
-				scale: 2.8, // Zoom scale factor
-			},
-		}));
+	const handleFullscreenOpen = () => {
+		const currentIndex = product.images.indexOf(selectedImage);
+		setFullscreenIndex(currentIndex >= 0 ? currentIndex : 0);
+		setIsFullscreenOpen(true);
 	};
 
-	const handleMouseLeave = (index: number) => {
-		setZoomStates(prev => ({
-			...prev,
-			[index]: {
-				...prev[index],
-				isHovered: false,
-				scale: 1,
-			},
-		}));
+	const handleFullscreenNext = () => {
+		const nextIndex = (fullscreenIndex + 1) % product.images.length;
+		setFullscreenIndex(nextIndex);
+		setSelectedImage(product.images[nextIndex]);
 	};
 
-	const handleMouseMove = (
-		e: React.MouseEvent<HTMLDivElement>,
-		index: number
-	) => {
-		const rect = e.currentTarget.getBoundingClientRect();
-		const x = ((e.clientX - rect.left) / rect.width) * 100;
-		const y = ((e.clientY - rect.top) / rect.height) * 100;
-
-		setZoomStates(prev => ({
-			...prev,
-			[index]: {
-				...prev[index],
-				transformOrigin: `${x}% ${y}%`,
-			},
-		}));
+	const handleFullscreenPrev = () => {
+		const prevIndex = fullscreenIndex === 0 ? product.images.length - 1 : fullscreenIndex - 1;
+		setFullscreenIndex(prevIndex);
+		setSelectedImage(product.images[prevIndex]);
 	};
 
 	return (
 		<GridItem>
-			<Grid templateColumns='100px 1fr' gap={4} alignItems='stretch'>
+			{/* Mobile: Stack layout */}
+			<Box display={{ base: 'block', md: 'none' }}>
+				<VStack gap={2}>
+					{/* Main Image */}
+					<Box
+						position='relative'
+						w='100%'
+						overflow='hidden'
+						bg='gray.50'
+						cursor='pointer'
+						onClick={handleFullscreenOpen}>
+						<AspectRatio ratio={1}>
+							<Image
+								src={selectedImage}
+								alt={product.name}
+								objectFit='cover'
+							/>
+						</AspectRatio>
+
+						{/* Fullscreen Icon */}
+						<IconButton
+							aria-label='View fullscreen'
+							position='absolute'
+							top='8px'
+							right='8px'
+							bg='blackAlpha.600'
+							color='white'
+							size='sm'
+							_hover={{ bg: 'blackAlpha.800' }}
+							zIndex={2}>
+							<LuExpand size={16} />
+						</IconButton>
+					</Box>
+
+					{/* Thumbnails */}
+					<HStack
+						gap={1}
+						w='100%'
+						overflowX='auto'
+						py={1}>
+						{product.images.map((img: any, index: number) => (
+							<Box
+								key={index}
+								minW='50px'
+								h='50px'
+								overflow='hidden'
+								border='1px solid'
+								borderColor={selectedImage === img ? 'black' : 'gray.300'}
+								cursor='pointer'
+								onClick={() => setSelectedImage(img)}>
+								<Image
+									src={img}
+									alt={`${product.name} ${index + 1}`}
+									w='100%'
+									h='100%'
+									objectFit='cover'
+								/>
+							</Box>
+						))}
+					</HStack>
+				</VStack>
+			</Box>
+
+			{/* Desktop: Side-by-side layout */}
+			<Grid
+				templateColumns='80px 1fr'
+				gap={2}
+				display={{ base: 'none', md: 'grid' }}
+				h='500px'>
 				{/* Thumbnails */}
-				<VStack gap={3} align='stretch' h='100%'>
+				<VStack
+					gap={1}
+					h='100%'
+					overflowY='auto'>
 					{product.images.map((img: any, index: number) => (
-						<Image
+						<Box
 							key={index}
-							src={img}
-							alt={product.name}
-							w='100%'
-							h='90px'
-							objectFit='cover'
-							borderRadius='md'
-							border={
-								selectedImage === img ? '2px solid black' : '1px solid gray'
-							}
+							w='80px'
+							h='80px'
+							overflow='hidden'
+							border='1px solid'
+							borderColor={selectedImage === img ? 'black' : 'gray.300'}
 							cursor='pointer'
-							onClick={() => handleThumbnailClick(img, index)}
-						/>
+							_hover={{ borderColor: 'black' }}
+							onClick={() => handleThumbnailClick(img, index)}>
+							<Image
+								src={img}
+								alt={`${product.name} ${index + 1}`}
+								w='100%'
+								h='100%'
+								objectFit='cover'
+							/>
+						</Box>
 					))}
 				</VStack>
 
-				{/* Large Image Slider with Zoom */}
+				{/* Main Image */}
 				<Box
-					borderRadius='md'
-					overflow='hidden'
-					w='100%'
-					h='100%'
 					position='relative'
-				>
-					<Slider
-						ref={sliderRef}
-						dots={true}
-						infinite={true}
-						speed={500}
-						slidesToShow={1}
-						slidesToScroll={1}
-						adaptiveHeight={true}
-						arrows={true}
-						prevArrow={<PrevArrow />}
-						nextArrow={<NextArrow />}
-						initialSlide={product.images.indexOf(selectedImage)}
-						beforeChange={(current, next) =>
-							setSelectedImage(product.images[next])
-						}
-					>
-						{product.images.map((img: any, index: number) => (
-							<Box key={index} borderRadius='md' overflow='hidden'>
-								<Box
-									position='relative'
-									w='100%'
-									h='500px'
-									overflow='hidden'
-									borderRadius='md'
-									onMouseEnter={() => handleMouseEnter(index)}
-									onMouseLeave={() => handleMouseLeave(index)}
-									onMouseMove={e => handleMouseMove(e, index)}
-								>
-									<Image
-										src={img}
-										alt={product.name}
-										w='100%'
-										h='100%'
-										objectFit='cover'
-										borderRadius='md'
-										transition='transform 0.5s ease-out'
-										transform={`scale(${zoomStates[index]?.scale || 1})`}
-										transformOrigin={
-											zoomStates[index]?.transformOrigin || 'center'
-										}
-										cursor={
-											zoomStates[index]?.isHovered ? 'zoom-in' : 'default'
-										}
-									/>
-								</Box>
-							</Box>
-						))}
-					</Slider>
+					overflow='hidden'
+					bg='gray.50'
+					h='100%'
+					cursor='pointer'
+					onClick={handleFullscreenOpen}
+					onMouseEnter={() => setIsHovered(true)}
+					onMouseLeave={() => setIsHovered(false)}>
+					{/* Fullscreen Button */}
+					<IconButton
+						aria-label='View fullscreen'
+						position='absolute'
+						top='8px'
+						right='8px'
+						bg='blackAlpha.600'
+						color='white'
+						size='sm'
+						opacity={isHovered ? 1 : 0}
+						transition='opacity 0.2s ease'
+						_hover={{ bg: 'blackAlpha.800' }}
+						zIndex={3}
+						onClick={e => {
+							e.stopPropagation();
+							handleFullscreenOpen();
+						}}>
+						<LuExpand size={16} />
+					</IconButton>
+
+					<AspectRatio ratio={1}>
+						<Image
+							src={selectedImage}
+							alt={product.name}
+							objectFit='cover'
+						/>
+					</AspectRatio>
 				</Box>
 			</Grid>
+
+			{/* Fullscreen Modal */}
+			<FullscreenImageModal
+				isOpen={isFullscreenOpen}
+				onClose={() => setIsFullscreenOpen(false)}
+				images={product.images}
+				currentIndex={fullscreenIndex}
+				onNext={handleFullscreenNext}
+				onPrev={handleFullscreenPrev}
+			/>
 		</GridItem>
 	);
 };

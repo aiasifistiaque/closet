@@ -1,20 +1,20 @@
-import { Box, BoxProps } from "@chakra-ui/react";
-import React from "react";
+import { Box, BoxProps } from '@chakra-ui/react';
+import React from 'react';
 
 interface ContainerProps extends BoxProps {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }
 
 const CustomContainer: React.FC<ContainerProps> = ({ children, ...rest }) => {
-  return (
-    <Box  
-      px={{ base: 4, md: 7, lg: 15, "2xl": 20 }} // responsive padding
-      pt={{ base: 4, md: 5, lg: 8, "2xl": 10 }}
-      {...rest}       // allow additional props like bg, border, etc.
-    >
-      {children}
-    </Box>
-  );
+	return (
+		<Box
+			px={{ base: 4, md: 12, lg: '92px', '2xl': 20 }} // responsive padding
+			pt={{ base: 4, md: 5, lg: 8, '2xl': 10 }}
+			{...rest} // allow additional props like bg, border, etc.
+		>
+			{children}
+		</Box>
+	);
 };
 
 export default CustomContainer;

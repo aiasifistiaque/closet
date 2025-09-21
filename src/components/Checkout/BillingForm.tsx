@@ -1,49 +1,182 @@
-import { Box, Grid, Text } from '@chakra-ui/react';
+import { Box, Grid, Text, VStack, HStack, Separator } from '@chakra-ui/react';
+import { RadioGroup } from '@chakra-ui/react';
 import React, { useState } from 'react';
-import { fields, shippingOptions } from '../data/checkoutData';
 import { InputField } from '../reusable/InputField';
-import DynamicSelector from './DynamicSelector';
-import { colors } from '../data/color';
 
 const BillingForm = () => {
-	const [shippingArea, setShippingArea] = useState('inside');
+	const [deliveryMethod, setDeliveryMethod] = useState('inside');
+
 	return (
-		<Box
-			border={`1px solid ${colors.blackBorder}`}
-      backgroundColor={colors.whiteBg}
-			rounded='md'
-			p={6}
-			height='100%'
-			display='flex'
-			flexDirection='column'
-		>
-			<Text fontSize='xl' fontWeight='bold' mb={6}>
-				Billing And Shipping
-			</Text>
-
-			<Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap={4} mb={4}>
-				{fields.map((field, i) => (
+		<VStack
+			gap={8}
+			align='stretch'>
+			{/* Contact Section */}
+			<Box>
+				<Text
+					fontSize='lg'
+					fontWeight='600'
+					mb={4}
+					fontFamily='"Zalando Sans Expanded", sans-serif'
+					color='gray.900'>
+					Contact
+				</Text>
+				<VStack
+					gap={4}
+					align='stretch'>
 					<InputField
-						label={field.label}
-						placeholder={field.placeholder}
-						key={i}
+						label='Email or mobile phone number'
+						placeholder='Email or phone number'
+						type='email'
 					/>
-				))}
-			</Grid>
-
-			{/* Order note */}
-			<InputField label='Order Note' placeholder='Order Note' type='textarea' />
-
-			{/* Shipping Area */}
-			<Box mt='auto'>
-				<DynamicSelector
-					title='Shipping Area'
-					options={shippingOptions}
-					defaultValue='inside'
-					onChange={val => console.log('Shipping:', val)}
-				/>
+				</VStack>
 			</Box>
-		</Box>
+
+			<Separator />
+
+			{/* Delivery Section */}
+			<Box>
+				<Text
+					fontSize='lg'
+					fontWeight='600'
+					mb={4}
+					fontFamily='"Zalando Sans Expanded", sans-serif'
+					color='gray.900'>
+					Delivery
+				</Text>
+
+				{/* Delivery Method Selection */}
+				<Box
+					border='1px solid'
+					borderColor='gray.200'
+					borderRadius='none'
+					p={4}
+					mb={6}
+					bg='gray.50'>
+					<Text
+						fontSize='sm'
+						fontWeight='500'
+						mb={3}
+						fontFamily='"Zalando Sans Expanded", sans-serif'
+						color='gray.700'>
+						Choose a delivery method
+					</Text>
+					<RadioGroup.Root
+						value={deliveryMethod}
+						onValueChange={details => setDeliveryMethod(details.value || 'inside')}>
+						<VStack
+							gap={3}
+							align='stretch'>
+							<Box
+								border='1px solid'
+								borderColor={deliveryMethod === 'inside' ? 'blue.500' : 'gray.200'}
+								borderRadius='none'
+								p={3}
+								bg='white'
+								cursor='pointer'
+								_hover={{ borderColor: 'blue.300' }}>
+								<RadioGroup.Item value='inside'>
+									<HStack
+										justify='space-between'
+										w='full'>
+										<Text
+											fontSize='sm'
+											fontFamily='"Zalando Sans Expanded", sans-serif'>
+											Inside Dhaka
+										</Text>
+										<Text
+											fontSize='sm'
+											fontWeight='600'
+											fontFamily='"Zalando Sans Expanded", sans-serif'>
+											৳60
+										</Text>
+									</HStack>
+								</RadioGroup.Item>
+							</Box>
+							<Box
+								border='1px solid'
+								borderColor={deliveryMethod === 'outside' ? 'blue.500' : 'gray.200'}
+								borderRadius='none'
+								p={3}
+								bg='white'
+								cursor='pointer'
+								_hover={{ borderColor: 'blue.300' }}>
+								<RadioGroup.Item value='outside'>
+									<HStack
+										justify='space-between'
+										w='full'>
+										<Text
+											fontSize='sm'
+											fontFamily='"Zalando Sans Expanded", sans-serif'>
+											Outside Dhaka
+										</Text>
+										<Text
+											fontSize='sm'
+											fontWeight='600'
+											fontFamily='"Zalando Sans Expanded", sans-serif'>
+											৳120
+										</Text>
+									</HStack>
+								</RadioGroup.Item>
+							</Box>
+						</VStack>
+					</RadioGroup.Root>
+				</Box>
+
+				{/* Address Form */}
+				<VStack
+					gap={4}
+					align='stretch'>
+					<Grid
+						templateColumns={{ base: '1fr', md: '1fr 1fr' }}
+						gap={4}>
+						<InputField
+							label='First name (optional)'
+							placeholder='First name'
+						/>
+						<InputField
+							label='Last name'
+							placeholder='Last name'
+						/>
+					</Grid>
+
+					<InputField
+						label='Phone number *'
+						placeholder='Phone number'
+						isRequired
+					/>
+
+					<InputField
+						label='Address'
+						placeholder='Address'
+						isRequired
+					/>
+
+					<InputField
+						label='Apartment, suite, etc. (optional)'
+						placeholder='Apartment, suite, etc.'
+					/>
+
+					<Grid
+						templateColumns={{ base: '1fr', md: '1fr 1fr' }}
+						gap={4}>
+						<InputField
+							label='City'
+							placeholder='City'
+						/>
+						<InputField
+							label='Postal code (optional)'
+							placeholder='Postal code'
+						/>
+					</Grid>
+
+					<InputField
+						label='Order Note (optional)'
+						placeholder='Special instructions for your order'
+						type='textarea'
+					/>
+				</VStack>
+			</Box>
+		</VStack>
 	);
 };
 

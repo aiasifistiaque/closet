@@ -1,0 +1,103 @@
+/* Product Card Consistency Styles */
+
+/* Ensure all product cards have consistent sizes */
+.product-card-container {
+  width: 100%;
+  max-width: 320px;
+  min-height: 480px;
+  margin: 0 auto;
+}
+
+/* Grid layouts for product cards */
+.product-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.product-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  max-width: 1050px;
+  margin: 0 auto;
+}
+
+.product-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  .product-grid-3,
+  .product-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid-2,
+  .product-grid-3,
+  .product-grid-4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+  }
+  
+  .product-card-container {
+    max-width: 100%;
+    min-height: 400px;
+  }
+}
+
+/* Page container with white background */
+.page-container {
+  background-color: #ffffff;
+  min-height: 100vh;
+}
+
+/* Section backgrounds */
+.section-white {
+  background-color: #ffffff;
+}
+
+.section-light-gray {
+  background-color: #fafafa;
+}
+
+/* Typography improvements */
+.ella-heading {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  color: #1a1a1a;
+}
+
+.ella-body-text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  color: #4a4a4a;
+  line-height: 1.6;
+}
+
+.ella-price {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  color: #1a1a1a;
+}
+
+.ella-brand {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #6b7280;
+}

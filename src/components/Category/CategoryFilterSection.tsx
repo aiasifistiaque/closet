@@ -1,8 +1,7 @@
 'use client';
-import { Checkbox, Flex, RadioGroup, Text } from '@chakra-ui/react';
+import { Checkbox, Flex, Text, VStack } from '@chakra-ui/react';
 import React, { FC } from 'react';
-import CategoryFilterScrollContainer from '../reusable/CategoryFilterScrollContainer';
-import CategoryFilterSectionContainer from '../reusable/CategoryFilterSectionContainer';
+import { categoryStyles } from './categoryStyles';
 
 type CategoryFilterSectionProps = {
 	categories: any;
@@ -18,69 +17,91 @@ const CategoryFilterSection: FC<CategoryFilterSectionProps> = ({
 	priceRanges,
 }) => {
 	return (
-		<Flex direction={'column'} gap={4}>
-			<CategoryFilterSectionContainer>
-				<Text fontWeight={600}>Categories</Text>
-				<CategoryFilterScrollContainer>
+		<VStack
+			alignItems='stretch'
+			gap={4}>
+			{/* Categories Filter */}
+			<Flex
+				{...categoryStyles.filterSection}
+				direction='column'>
+				<Text {...categoryStyles.filterTitle}>Categories</Text>
+				<VStack
+					alignItems='stretch'
+					gap={2}>
 					{categories?.map((item: any, index: number) => (
-						<Checkbox.Root key={index} pl={2}>
+						<Checkbox.Root
+							key={index}
+							size='sm'>
 							<Checkbox.HiddenInput />
 							<Checkbox.Control />
-							<Checkbox.Label>{item}</Checkbox.Label>
+							<Checkbox.Label {...categoryStyles.filterOption}>{item}</Checkbox.Label>
 						</Checkbox.Root>
 					))}
-				</CategoryFilterScrollContainer>
-			</CategoryFilterSectionContainer>
+				</VStack>
+			</Flex>
 
-			<CategoryFilterSectionContainer>
-				<Text fontWeight={600}>Colors</Text>
-				<CategoryFilterScrollContainer>
-					{colors?.map((item: any, index: number) => (
-						<Checkbox.Root key={index} pl={2}>
+			{/* Colors Filter */}
+			<Flex
+				{...categoryStyles.filterSection}
+				direction='column'>
+				<Text {...categoryStyles.filterTitle}>Colors</Text>
+				<VStack
+					alignItems='stretch'
+					gap={2}>
+					{[...new Set(colors)]?.map((item: any, index: number) => (
+						<Checkbox.Root
+							key={index}
+							size='sm'>
 							<Checkbox.HiddenInput />
 							<Checkbox.Control />
-							<Checkbox.Label>{item}</Checkbox.Label>
+							<Checkbox.Label {...categoryStyles.filterOption}>{item}</Checkbox.Label>
 						</Checkbox.Root>
 					))}
-				</CategoryFilterScrollContainer>
-			</CategoryFilterSectionContainer>
+				</VStack>
+			</Flex>
 
-			<CategoryFilterSectionContainer>
-				<Text fontWeight={600}>Sizes</Text>
-				<CategoryFilterScrollContainer>
+			{/* Sizes Filter */}
+			<Flex
+				{...categoryStyles.filterSection}
+				direction='column'>
+				<Text {...categoryStyles.filterTitle}>Sizes</Text>
+				<VStack
+					alignItems='stretch'
+					gap={2}>
 					{sizes?.map((item: any, index: number) => (
-						<Checkbox.Root key={index} pl={2}>
+						<Checkbox.Root
+							key={index}
+							size='sm'>
 							<Checkbox.HiddenInput />
 							<Checkbox.Control />
-							<Checkbox.Label>{item}</Checkbox.Label>
+							<Checkbox.Label {...categoryStyles.filterOption}>{item}</Checkbox.Label>
 						</Checkbox.Root>
 					))}
-				</CategoryFilterScrollContainer>
-			</CategoryFilterSectionContainer>
+				</VStack>
+			</Flex>
 
-			<CategoryFilterSectionContainer>
-				<Text fontWeight={600}>Price Range</Text>
-				<CategoryFilterScrollContainer>
-					<RadioGroup.Root
-						style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}
-					>
-						{priceRanges?.map((item: any, index: number) => (
-							<RadioGroup.Item
-								key={index}
-								value={`${item.min}-${item.max}`}
-								pl={2}
-							>
-								<RadioGroup.ItemHiddenInput />
-								<RadioGroup.ItemIndicator />
-								<RadioGroup.ItemText>
-									{item.min.toFixed(2)} to {item.max.toFixed(2)}
-								</RadioGroup.ItemText>
-							</RadioGroup.Item>
-						))}
-					</RadioGroup.Root>
-				</CategoryFilterScrollContainer>
-			</CategoryFilterSectionContainer>
-		</Flex>
+			{/* Price Range Filter */}
+			<Flex
+				{...categoryStyles.filterSection}
+				direction='column'>
+				<Text {...categoryStyles.filterTitle}>Price Range</Text>
+				<VStack
+					alignItems='stretch'
+					gap={2}>
+					{priceRanges?.map((range: any, index: number) => (
+						<Checkbox.Root
+							key={index}
+							size='sm'>
+							<Checkbox.HiddenInput />
+							<Checkbox.Control />
+							<Checkbox.Label {...categoryStyles.filterOption}>
+								৳{range.min} - ৳{range.max}
+							</Checkbox.Label>
+						</Checkbox.Root>
+					))}
+				</VStack>
+			</Flex>
+		</VStack>
 	);
 };
 

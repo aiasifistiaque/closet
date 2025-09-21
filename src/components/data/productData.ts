@@ -29,9 +29,10 @@ export interface DetailedProduct {
 	id: number;
 	name: string;
 	price: number;
-	oldPrice: number;
-	discount: number;
+	oldPrice?: number;
+	discount?: number;
 	color: string;
+	colors?: string[]; // For multiple color options
 	sizes: string[];
 	sku: string;
 	category: string;
@@ -40,6 +41,10 @@ export interface DetailedProduct {
 	sizeChart: string;
 	description?: string;
 	delivery?: string;
+	brand?: string; // Brand name
+	rating?: number; // Product rating (1-5)
+	reviewCount?: number; // Number of reviews
+	isNew?: boolean; // New product badge
 }
 
 export interface CategoryData {
