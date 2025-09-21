@@ -61,7 +61,7 @@ const HeroBanner = () => (
 						bgImage={`url('${slide.image}')`}
 						bgSize='cover'
 						bgPos='center center'
-						h={{ base: '70vh', md: '80vh' }}
+						h={{ base: '70vh', md: '84vh' }}
 						color='white'
 						position='relative'
 						display='flex'
@@ -79,7 +79,7 @@ const HeroBanner = () => (
 							maxW='7xl'
 							position='relative'
 							zIndex={2}
-							px={{ base: 4, md: 8 }}>
+							px={{ base: 4, md: 8, lg: 20 }}>
 							<VStack
 								align={{ base: 'center', md: 'flex-start' }}
 								textAlign={{ base: 'center', md: 'left' }}
