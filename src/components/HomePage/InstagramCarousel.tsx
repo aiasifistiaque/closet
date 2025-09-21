@@ -5,14 +5,14 @@ import CustomContainer from '../reusable/Container';
 const InstagramCarousel = () => {
 	// Sample Instagram images - replace with actual Instagram feed
 	const instagramImages = [
-		'/public/image-1.webp',
-		'/public/image-2.webp',
-		'/public/image-3.webp',
-		'/public/image-4.webp',
-		'/public/image-5.webp',
-		'/public/image-6.webp',
-		'/public/image-7.webp',
-		'/public/image-8.webp',
+		'/image-1.webp',
+		'/image-2.webp',
+		'/image-3.webp',
+		'/image-4.webp',
+		'/image-5.webp',
+		'/image-6.webp',
+		'/image-7.webp',
+		'/image-8.webp',
 	];
 
 	return (
