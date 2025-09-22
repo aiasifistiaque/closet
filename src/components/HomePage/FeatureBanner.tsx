@@ -65,8 +65,8 @@ const FeatureBanner: React.FC<FeatureBannerProps> = ({
 						textAlign={{ base: 'center', lg: 'left' }}>
 						{subtitle && (
 							<Text
-								fontSize='sm'
-								fontWeight='600'
+								fontSize={{ base: '12px', md: 'sm' }}
+								fontWeight={{ base: '400', lg: '600' }}
 								color={textColor}
 								letterSpacing='2px'
 								textTransform='uppercase'>
@@ -85,7 +85,7 @@ const FeatureBanner: React.FC<FeatureBannerProps> = ({
 
 						{description && (
 							<Text
-								fontSize={{ base: 'md', md: '14px' }}
+								fontSize={{ base: '12px', md: 'sm' }}
 								color={textColor}
 								maxW='500px'
 								mb={4}
@@ -102,7 +102,7 @@ const FeatureBanner: React.FC<FeatureBannerProps> = ({
 									size='lg'
 									bg={textColor === 'white' ? 'white' : 'black'}
 									color={textColor === 'white' ? 'black' : 'white'}
-									fontWeight='500'
+									fontWeight='400'
 									letterSpacing='1px'
 									px={8}
 									py={6}
