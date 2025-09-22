@@ -25,7 +25,6 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({ quantity, onQuantit
 				fontSize='sm'
 				fontWeight='500'
 				mb={2}
-				fontFamily='"Zalando Sans Expanded", sans-serif'
 				textTransform='uppercase'
 				letterSpacing='0.5px'>
 				Quantity
@@ -52,7 +51,6 @@ const QuantitySelector: React.FC<QuantitySelectorProps> = ({ quantity, onQuantit
 					borderColor='gray.300'
 					borderLeft='none'
 					borderRight='none'
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontSize='sm'
 					fontWeight='500'>
 					{quantity}

@@ -59,18 +59,7 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 
 	return (
 		<Box
-			pb={4} // Padding bottom for spacing
-			position='relative'
-			bg='white'
-			overflow='hidden'
-			transition='all 0.3s ease'
-			minH='480px' // Fixed minimum height for consistency
-			w='full'
-			maxW='320px' // Maximum width for 4 cards per row
-			mx='auto' // Center the card
-			cursor='pointer'
-			border='none' // Remove border
-			borderRadius='none' // Remove border radius
+			{...containerCss}
 			onMouseEnter={() => setIsHovered(true)}
 			onMouseLeave={() => setIsHovered(false)}>
 			<Link href={`/details/${product.id}`}>
@@ -80,17 +69,8 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 					{/* Discount Badge */}
 					{discountPercentage > 0 && (
 						<Badge
-							position='absolute'
-							top='12px'
-							left='12px'
-							bg='red.500'
-							color='white'
-							fontSize='xs'
-							fontWeight='bold'
-							px='8px'
-							py='4px'
-							borderRadius='md'
-							zIndex='2'>
+							{...badgeCss}
+							bg='red.500'>
 							-{discountPercentage}%
 						</Badge>
 					)}
@@ -98,17 +78,8 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 					{/* New Badge */}
 					{product.isNew && (
 						<Badge
-							position='absolute'
-							top='12px'
-							right='12px'
-							bg='green.500'
-							color='white'
-							fontSize='xs'
-							fontWeight='bold'
-							px='8px'
-							py='4px'
-							borderRadius='md'
-							zIndex='2'>
+							{...badgeCss}
+							bg='green.500'>
 							NEW
 						</Badge>
 					)}
@@ -117,7 +88,7 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 					<AspectRatio
 						ratio={4 / 5}
 						w='full'
-						minH='420px'>
+						minH={{ base: '240px', md: '320px', lg: '420px' }}>
 						<Image
 							src={isHovered && product.images[1] ? product.images[1] : product.images[0]}
 							alt={product.name}
@@ -141,15 +112,12 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 							<IconButton
 								aria-label='Quick view'
 								size='sm'
-								bg='white'
 								color='gray.700'
-								borderRadius='full'
-								boxShadow='md'
 								_hover={{
 									bg: 'gray.100',
 									transform: 'scale(1.1)',
 								}}
-								transition='all 0.2s ease'
+								{...hoverBtnCss}
 								onClick={e => {
 									e.preventDefault();
 									e.stopPropagation();
@@ -161,18 +129,16 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 							{/* Add to Cart */}
 							<IconButton
 								aria-label={isInCart ? 'In cart' : 'Add to cart'}
-								size='sm'
+								{...hoverBtnCss}
 								bg={isInCart ? 'green.500' : 'black'}
 								color='white'
-								borderRadius='full'
-								boxShadow='md'
 								_hover={{
 									bg: isInCart ? 'green.600' : 'gray.800',
 									transform: 'scale(1.1)',
 								}}
-								transition='all 0.2s ease'
 								onClick={handleAddToCart}
-								disabled={isInCart}>
+								disabled={isInCart}
+								size='sm'>
 								<ShoppingCart size={18} />
 							</IconButton>
 
@@ -180,15 +146,12 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 							<IconButton
 								aria-label='Add to wishlist'
 								size='sm'
-								bg='white'
 								color={isWishlisted ? 'red.500' : 'gray.700'}
-								borderRadius='full'
-								boxShadow='md'
 								_hover={{
 									bg: isWishlisted ? 'red.50' : 'gray.100',
 									transform: 'scale(1.1)',
 								}}
-								transition='all 0.2s ease'
+								{...hoverBtnCss}
 								onClick={handleWishlist}>
 								<Heart
 									size={18}
@@ -200,24 +163,9 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 
 					{/* Quick Add to Cart Button (Bottom) */}
 					<Box
-						position='absolute'
-						bottom='0'
-						left='0'
-						right='0'
-						bg='blackAlpha.800'
-						color='white'
-						py='12px'
-						textAlign='center'
-						fontSize='sm'
-						fontWeight='medium'
+						{...quickAtcCss}
 						transform={isHovered ? 'translateY(0)' : 'translateY(100%)'}
-						transition='all 0.3s ease'
-						cursor='pointer'
-						onClick={handleAddToCart}
-						zIndex='2'
-						_hover={{
-							bg: 'blackAlpha.900',
-						}}>
+						onClick={handleAddToCart}>
 						{isInCart ? 'Already in Cart' : 'Quick Add to Cart'}
 					</Box>
 				</Box>
@@ -240,13 +188,12 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 						letterSpacing='wider'
 						fontWeight='600'
 						className='ella-brand'>
-						{product.brand}
+						{product?.brand}
 					</Text>
 				)}
 
 				{/* Product Name */}
 				<Text
-					fontFamily='"Zalando Sans Expanded", sans-serif' // Updated font family
 					fontSize='12px' // Smaller font size
 					fontWeight='400' // Medium weight
 					color='gray.800'
@@ -261,7 +208,7 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 					_hover={{
 						color: 'black',
 					}}>
-					{product.name}
+					{product?.name}
 				</Text>
 
 				{/* Rating */}
@@ -292,7 +239,6 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 					align='center'>
 					{/* Fixed height for price consistency */}
 					<Text
-						fontFamily='"Zalando Sans Expanded", sans-serif'
 						fontSize='14px' // Smaller font size
 						fontWeight='500'
 						color='black'>
@@ -300,7 +246,6 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 					</Text>
 					{product.oldPrice && (
 						<Text
-							fontFamily='"Zalando Sans Expanded", sans-serif'
 							fontSize='xs' // Smaller font size
 							color='gray.400'
 							textDecoration='line-through'
@@ -344,6 +289,61 @@ const ModernProductCard: React.FC<ModernProductCardProps> = ({ product }) => {
 			</VStack>
 		</Box>
 	);
+};
+
+const containerCss = {
+	pb: 4,
+	position: 'relative',
+	bg: 'white',
+	overflow: 'hidden',
+	transition: 'all 0.3s ease',
+	minH: { base: '270px', md: '400px', lg: '480px' },
+	w: 'full',
+	maxW: '320px', // Maximum width for 4 cards per row
+	mx: 'auto', // Center the card
+	cursor: 'pointer',
+	border: 'none',
+	borderRadius: 'none',
+};
+
+const quickAtcCss = {
+	position: 'absolute',
+	bottom: '0',
+	left: '0',
+	right: '0',
+	bg: 'blackAlpha.800',
+	color: 'white',
+	py: '12px',
+	textAlign: 'center',
+	fontSize: '12px',
+	fontWeight: 'medium',
+	transition: 'all 0.3s ease',
+	cursor: 'pointer',
+	zIndex: '2',
+	_hover: {
+		bg: 'blackAlpha.900',
+	},
+};
+
+const badgeCss = {
+	position: 'absolute',
+	top: '12px',
+	right: '12px',
+
+	color: 'white',
+	fontSize: 'xs',
+	fontWeight: 'bold',
+	px: '8px',
+	py: '4px',
+	borderRadius: 'md',
+	zIndex: '2',
+};
+
+const hoverBtnCss = {
+	borderRadius: 'full',
+	boxShadow: 'md',
+	transition: 'all 0.2s ease',
+	bg: 'white',
 };
 
 export default ModernProductCard;

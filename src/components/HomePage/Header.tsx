@@ -1,6 +1,8 @@
 import { Badge, Box, Flex, HStack, Input, Text, TextProps, VStack, Center } from '@chakra-ui/react';
 import React, { useState } from 'react';
 import { LuSearch, LuUser, LuShoppingBag } from 'react-icons/lu';
+import { BsBag } from 'react-icons/bs';
+
 import MobileNav from '../Navbar/MobileNav';
 import Link from 'next/link';
 import CustomContainer from '../reusable/Container';
@@ -41,14 +43,13 @@ const Header = () => {
 				mt='32px'>
 				<CustomContainer
 					pt={0}
-					px={{ base: 4, md: 7, lg: 20, '2xl': 20 }}>
+					pl={{ base: '0', lg: '92px' }}>
 					<Flex
 						justify='space-between'
 						align='center'
-						gap={{ base: 2, md: 4 }}
+						gap={{ base: 1, md: 4 }}
 						w='100%'
-						px={{ base: 4, md: 7, lg: 15, '2xl': 20 }}
-						py={3}>
+						py={{ base: 2, md: 3 }}>
 						<Box display={{ base: 'block', lg: 'none' }}>
 							<MobileNav />
 						</Box>
@@ -57,12 +58,12 @@ const Header = () => {
 						<Link href={'/'}>
 							<Box>
 								<Text
-									fontSize={{ base: '24px', md: '28px' }}
+									fontSize={{ base: '10px', md: '12px' }}
 									fontWeight='700'
 									color='black'
 									letterSpacing='3px'
 									textTransform='uppercase'>
-									CLOSET
+									CLOSET 24/7
 								</Text>
 							</Box>
 						</Link>
@@ -113,6 +114,7 @@ const Header = () => {
 									color='black'
 								/>
 								<Text
+									display={{ base: 'none', md: 'block' }}
 									fontSize='10px'
 									fontWeight='400'
 									textTransform='uppercase'
@@ -128,11 +130,13 @@ const Header = () => {
 										gap={2}
 										cursor='pointer'
 										align='center'>
-										<LuShoppingBag
+										<BsBag
 											size={18}
 											color='black'
 										/>
+										{/* <LuShoppingBag /> */}
 										<Text
+											display={{ base: 'none', md: 'block' }}
 											fontSize='10px'
 											fontWeight='400'
 											letterSpacing='0.5px'>
@@ -165,10 +169,18 @@ const Header = () => {
 										color='black'
 									/> */}
 									<Text
+										display={{ base: 'none', md: 'block' }}
 										fontSize='10px'
 										fontWeight='400'
 										letterSpacing='0.5px'>
 										{isLoggedIn ? userName : 'Sign in or Create an account'}
+									</Text>
+									<Text
+										display={{ base: 'block', md: 'none' }}
+										fontSize='10px'
+										fontWeight='400'
+										letterSpacing='0.5px'>
+										{isLoggedIn ? userName : 'Sign In'}
 									</Text>
 								</VStack>
 							</Link>

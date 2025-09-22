@@ -43,7 +43,7 @@ export const orderSuccessStyles = {
 		fontSize: { base: '2xl', md: '3xl' },
 		fontWeight: '600',
 		color: 'gray.900',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 2,
 	},
 
@@ -51,7 +51,7 @@ export const orderSuccessStyles = {
 		fontSize: { base: 'lg', md: 'xl' },
 		fontWeight: '500',
 		color: 'gray.700',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 6,
 	},
 
@@ -59,13 +59,12 @@ export const orderSuccessStyles = {
 		fontSize: 'lg',
 		fontWeight: '600',
 		color: 'blue.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	infoText: {
 		fontSize: 'sm',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		lineHeight: '1.6',
 	},
 
@@ -73,7 +72,7 @@ export const orderSuccessStyles = {
 		fontSize: 'lg',
 		fontWeight: '600',
 		color: 'gray.900',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 4,
 	},
 
@@ -103,7 +102,7 @@ export const orderSuccessStyles = {
 		bg: 'black',
 		color: 'white',
 		borderRadius: 'md',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		fontWeight: '500',
 		fontSize: 'sm',
 		_hover: { bg: 'gray.800' },
@@ -118,7 +117,7 @@ export const orderSuccessStyles = {
 		bg: 'white',
 		color: 'gray.700',
 		borderRadius: 'md',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		fontWeight: '500',
 		fontSize: 'sm',
 		_hover: { bg: 'gray.50', borderColor: 'gray.400' },
@@ -184,6 +183,5 @@ export const orderSuccessStyles = {
 		borderRadius: 'full',
 		fontSize: 'xs',
 		fontWeight: '600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 };

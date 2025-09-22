@@ -69,30 +69,29 @@ const FeatureBanner: React.FC<FeatureBannerProps> = ({
 								fontWeight='600'
 								color={textColor}
 								letterSpacing='2px'
-								textTransform='uppercase'
-								fontFamily='"Zalando Sans Expanded", sans-serif'>
+								textTransform='uppercase'>
 								{subtitle}
 							</Text>
 						)}
 
 						<Text
-							fontSize={{ base: '3xl', md: '4xl', lg: '5xl' }}
-							fontWeight='700'
+							fontSize={{ base: '18px', md: '32px' }}
+							fontWeight='600'
 							color={textColor}
 							letterSpacing='1px'
-							fontFamily='"Zalando Sans Expanded", sans-serif'
 							lineHeight={1.1}>
 							{title}
 						</Text>
 
 						{description && (
 							<Text
-								fontSize={{ base: 'md', md: 'lg' }}
+								fontSize={{ base: 'md', md: '14px' }}
 								color={textColor}
 								maxW='500px'
+								mb={4}
+								letterSpacing='0.5px'
 								lineHeight={1.6}
-								opacity={0.9}
-								fontFamily='"Zalando Sans Expanded", sans-serif'>
+								opacity={0.9}>
 								{description}
 							</Text>
 						)}
@@ -115,8 +114,7 @@ const FeatureBanner: React.FC<FeatureBannerProps> = ({
 									_active={{
 										transform: 'translateY(0px)',
 									}}
-									transition='all 0.2s'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									transition='all 0.2s'>
 									{buttonText}
 								</Button>
 							</Link>

@@ -176,7 +176,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 					<Text
 // 						fontSize='sm'
 // 						color='gray.500'
-// 						fontFamily='"Zalando Sans Expanded", sans-serif'>
+// 						>
 // 						4.0 (127 reviews)
 // 					</Text>
 // 				</HStack>
@@ -189,7 +189,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 						fontSize='3xl'
 // 						fontWeight='600'
 // 						color='black'
-// 						fontFamily='"Zalando Sans Expanded", sans-serif'>
+// 						>
 // 						৳ {product.price.toLocaleString()}
 // 					</Text>
 // 					{product.oldPrice && (
@@ -197,7 +197,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 							as='s'
 // 							color='gray.400'
 // 							fontSize='xl'
-// 							fontFamily='"Zalando Sans Expanded", sans-serif'>
+// 							>
 // 							৳ {product.oldPrice.toLocaleString()}
 // 						</Text>
 // 					)}
@@ -225,7 +225,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 					<Text
 // 						fontWeight='500'
 // 						fontSize='sm'
-// 						fontFamily='"Zalando Sans Expanded", sans-serif'
+//
 // 						textTransform='uppercase'
 // 						letterSpacing='0.5px'>
 // 						Color:{' '}
@@ -266,7 +266,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 						<Text
 // 							fontWeight='500'
 // 							fontSize='sm'
-// 							fontFamily='"Zalando Sans Expanded", sans-serif'
+//
 // 							textTransform='uppercase'
 // 							letterSpacing='0.5px'>
 // 							Size:{' '}
@@ -291,7 +291,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 								minW='50px'
 // 								h='50px'
 // 								borderRadius='md'
-// 								fontFamily='"Zalando Sans Expanded", sans-serif'
+//
 // 								fontSize='sm'
 // 								fontWeight='500'
 // 								border='1px solid'
@@ -315,7 +315,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 					<Text
 // 						fontWeight='500'
 // 						fontSize='sm'
-// 						fontFamily='"Zalando Sans Expanded", sans-serif'
+//
 // 						textTransform='uppercase'
 // 						letterSpacing='0.5px'>
 // 						Quantity
@@ -334,7 +334,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 							py={2}
 // 							minW='60px'
 // 							textAlign='center'
-// 							fontFamily='"Zalando Sans Expanded", sans-serif'
+//
 // 							fontWeight='500'>
 // 							{quantity}
 // 						</Text>
@@ -366,7 +366,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 						onClick={handleAddToCart}
 // 						disabled={isInCart}
 // 						h='56px'
-// 						fontFamily='"Zalando Sans Expanded", sans-serif'
+//
 // 						fontWeight='500'
 // 						fontSize='sm'
 // 						textTransform='uppercase'
@@ -389,7 +389,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 							borderColor='black'
 // 							color='black'
 // 							h='56px'
-// 							fontFamily='"Zalando Sans Expanded", sans-serif'
+//
 // 							fontWeight='500'
 // 							fontSize='sm'
 // 							textTransform='uppercase'
@@ -443,7 +443,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 							<Text
 // 								fontSize='sm'
 // 								fontWeight='500'
-// 								fontFamily='"Zalando Sans Expanded", sans-serif'>
+// 								>
 // 								Free Shipping
 // 							</Text>
 // 							<Text
@@ -465,7 +465,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 							<Text
 // 								fontSize='sm'
 // 								fontWeight='500'
-// 								fontFamily='"Zalando Sans Expanded", sans-serif'>
+// 								>
 // 								Easy Returns
 // 							</Text>
 // 							<Text
@@ -487,7 +487,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 							<Text
 // 								fontSize='sm'
 // 								fontWeight='500'
-// 								fontFamily='"Zalando Sans Expanded", sans-serif'>
+// 								>
 // 								Secure Payment
 // 							</Text>
 // 							<Text
@@ -512,7 +512,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 					<Text
 // 						fontSize='sm'
 // 						color='gray.600'
-// 						fontFamily='"Zalando Sans Expanded", sans-serif'>
+// 						>
 // 						<Text
 // 							as='span'
 // 							fontWeight='500'>
@@ -523,7 +523,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 					<Text
 // 						fontSize='sm'
 // 						color='gray.600'
-// 						fontFamily='"Zalando Sans Expanded", sans-serif'>
+// 						>
 // 						<Text
 // 							as='span'
 // 							fontWeight='500'>
@@ -535,7 +535,7 @@ const GridRightPart: FC<GridRightPartProps> = ({ product, selectedSize, setSelec
 // 						<Text
 // 							fontSize='sm'
 // 							color='gray.600'
-// 							fontFamily='"Zalando Sans Expanded", sans-serif'>
+// 							>
 // 							<Text
 // 								as='span'
 // 								fontWeight='500'>

@@ -15,7 +15,8 @@ interface CartItemCardProps {
 const CartItemCard: React.FC<CartItemCardProps> = ({ item, onRemove, onUpdateQuantity }) => {
 	return (
 		<Flex
-			border={`1px solid ${colors.blackBorder}`}
+			border={`1px solid`}
+			borderColor='gray.200'
 			bg={colors.whiteBg}
 			borderRadius='none'
 			p={6}
@@ -36,7 +37,6 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ item, onRemove, onUpdateQua
 				flex='1'
 				minW='200px'>
 				<Text
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontWeight='500'
 					fontSize='md'
 					color='gray.900'
@@ -44,9 +44,8 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ item, onRemove, onUpdateQua
 					{item.title}
 				</Text>
 				<Text
-					fontSize='sm'
-					color='gray.600'
-					fontFamily='"Zalando Sans Expanded", sans-serif'>
+					fontSize='10px'
+					color='black'>
 					Size: {item.size} | Color: {item.color}
 				</Text>
 				{onUpdateQuantity && (
@@ -56,7 +55,6 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ item, onRemove, onUpdateQua
 						gap={3}>
 						<Text
 							fontSize='sm'
-							fontFamily='"Zalando Sans Expanded", sans-serif'
 							fontWeight='500'
 							color='gray.700'>
 							Quantity:
@@ -70,7 +68,6 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ item, onRemove, onUpdateQua
 							<NumberInput.Input
 								border={`1px solid ${colors.blackBorder}`}
 								borderRadius='none'
-								fontFamily='"Zalando Sans Expanded", sans-serif'
 								fontSize='sm'
 								h='36px'
 								_hover={{ borderColor: 'gray.400' }}
@@ -88,7 +85,6 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ item, onRemove, onUpdateQua
 				textAlign='right'
 				minW='120px'>
 				<Text
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontWeight='600'
 					fontSize='lg'
 					color='gray.900'
@@ -100,7 +96,6 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ item, onRemove, onUpdateQua
 						fontSize='sm'
 						color='gray.400'
 						textDecoration='line-through'
-						fontFamily='"Zalando Sans Expanded", sans-serif'
 						mb={2}>
 						৳ {(item.oldPrice * item.quantity).toLocaleString()}
 					</Text>
@@ -111,7 +106,6 @@ const CartItemCard: React.FC<CartItemCardProps> = ({ item, onRemove, onUpdateQua
 						size='sm'
 						colorPalette='red'
 						borderRadius='none'
-						fontFamily='"Zalando Sans Expanded", sans-serif'
 						fontSize='xs'
 						h='32px'
 						px={3}

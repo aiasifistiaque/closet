@@ -19,7 +19,6 @@ const CartPageComponent = () => {
 					mb={8}>
 					<Heading
 						size='xl'
-						fontFamily='"Zalando Sans Expanded", sans-serif'
 						fontWeight='500'
 						mb={2}>
 						Shopping Cart

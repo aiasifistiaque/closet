@@ -7,7 +7,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 const slides = [
@@ -59,15 +59,7 @@ const HeroBanner = () => (
 				<SwiperSlide key={slide.id}>
 					<Box
 						bgImage={`url('${slide.image}')`}
-						bgSize='cover'
-						bgPos='center center'
-						h={{ base: '70vh', md: '84vh' }}
-						color='white'
-						position='relative'
-						display='flex'
-						alignItems='center'
-						justifyContent={{ base: 'center', md: 'flex-start' }}>
-						{/* Overlay */}
+						{...heroImageBg}>
 						<Box
 							position='absolute'
 							inset={0}
@@ -76,10 +68,9 @@ const HeroBanner = () => (
 
 						{/* Content */}
 						<Container
-							maxW='7xl'
 							position='relative'
 							zIndex={2}
-							px={{ base: 4, md: 8, lg: 20 }}>
+							px={{ base: 4, md: 8, lg: '92px' }}>
 							<VStack
 								align={{ base: 'center', md: 'flex-start' }}
 								textAlign={{ base: 'center', md: 'left' }}
@@ -87,7 +78,6 @@ const HeroBanner = () => (
 								gap={6}>
 								{/* Subtitle */}
 								<Text
-									fontFamily='"Zalando Sans Expanded", sans-serif'
 									fontSize={{ base: 'sm', md: 'md' }}
 									fontWeight='400'
 									letterSpacing='widest'
@@ -98,7 +88,6 @@ const HeroBanner = () => (
 
 								{/* Main Title */}
 								<Text
-									fontFamily='"Zalando Sans Expanded", sans-serif'
 									fontSize={{ base: '3xl', md: '5xl', lg: '6xl' }}
 									fontWeight='300'
 									letterSpacing='wider'
@@ -109,7 +98,6 @@ const HeroBanner = () => (
 
 								{/* Description */}
 								<Text
-									fontFamily='"Zalando Sans Expanded", sans-serif'
 									fontSize={{ base: 'md', md: 'lg' }}
 									fontWeight='300'
 									color='white'
@@ -126,46 +114,12 @@ const HeroBanner = () => (
 									flexDirection={{ base: 'column', sm: 'row' }}
 									w={{ base: 'full', sm: 'auto' }}>
 									<Link href={slide.buttonLink}>
-										<Button
-											bg='white'
-											color='black'
-											borderRadius='none'
-											fontFamily='"Zalando Sans Expanded", sans-serif'
-											fontWeight='500'
-											fontSize='sm'
-											letterSpacing='wider'
-											px={8}
-											py={6}
-											h='auto'
-											minW='160px'
-											_hover={{
-												bg: 'gray.100',
-												transform: 'translateY(-2px)',
-											}}
-											transition='all 0.3s ease'>
-											{slide.buttonText}
-										</Button>
+										<Button {...buttonCss}>{slide.buttonText}</Button>
 									</Link>
 									<Link href='/categories'>
 										<Button
 											variant='outline'
-											borderColor='white'
-											color='white'
-											borderRadius='none'
-											fontFamily='"Zalando Sans Expanded", sans-serif'
-											fontWeight='500'
-											fontSize='sm'
-											letterSpacing='wider'
-											px={8}
-											py={6}
-											h='auto'
-											minW='160px'
-											_hover={{
-												bg: 'whiteAlpha.200',
-												borderColor: 'gray.200',
-												transform: 'translateY(-2px)',
-											}}
-											transition='all 0.3s ease'>
+											{...buttonCss}>
 											VIEW ALL
 										</Button>
 									</Link>
@@ -199,5 +153,33 @@ const HeroBanner = () => (
 		`}</style>
 	</Box>
 );
+
+const heroImageBg = {
+	bgSize: 'cover',
+	bgPos: 'center center',
+	h: { base: '70vh', md: '84vh' },
+	color: 'white',
+	position: 'relative',
+	display: 'flex',
+	alignItems: 'center',
+	justifyContent: { base: 'center', md: 'flex-start' },
+};
+
+const buttonCss = {
+	borderColor: 'white',
+	color: 'white',
+	borderRadius: 'none',
+	fontWeight: '500',
+	fontSize: 'sm',
+	letterSpacing: 'wider',
+	px: 8,
+	h: '52px',
+	minW: '160px',
+	_hover: {
+		bg: 'whiteAlpha.200',
+		borderColor: 'gray.200',
+		transform: 'translateY(-2px)',
+	},
+};
 
 export default HeroBanner;

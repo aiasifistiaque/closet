@@ -137,8 +137,7 @@ export default function MyOrdersPageComponent({
 								<Button
 									variant='ghost'
 									size='sm'
-									onClick={handleBackClick}
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									onClick={handleBackClick}>
 									<HStack gap={2}>
 										<ArrowLeft size={16} />
 										<Text>Back to Profile</Text>
@@ -150,8 +149,7 @@ export default function MyOrdersPageComponent({
 								<Text {...profileStyles.sectionHeading}>My Orders</Text>
 								<Text
 									fontSize='sm'
-									color='gray.600'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									color='gray.600'>
 									Track and manage your order history
 								</Text>
 							</Box>
@@ -192,7 +190,7 @@ export default function MyOrdersPageComponent({
 										height: '44px',
 										borderColor: '#D1D5DB',
 										borderRadius: '6px',
-										fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 										fontSize: '14px',
 										padding: '0 12px',
 										border: '1px solid #D1D5DB',
@@ -214,7 +212,7 @@ export default function MyOrdersPageComponent({
 										height: '44px',
 										borderColor: '#D1D5DB',
 										borderRadius: '6px',
-										fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 										fontSize: '14px',
 										padding: '0 12px',
 										border: '1px solid #D1D5DB',
@@ -235,8 +233,7 @@ export default function MyOrdersPageComponent({
 								align='center'>
 								<Text
 									fontSize='sm'
-									color='gray.600'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									color='gray.600'>
 									Showing {filteredAndSortedOrders.length} of {orders.length} orders
 								</Text>
 
@@ -248,8 +245,7 @@ export default function MyOrdersPageComponent({
 											setSearchTerm('');
 											setStatusFilter('all');
 											setSortBy('date-desc');
-										}}
-										fontFamily='"Zalando Sans Expanded", sans-serif'>
+										}}>
 										<HStack gap={2}>
 											<Filter size={14} />
 											<Text>Clear Filters</Text>

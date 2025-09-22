@@ -8,10 +8,9 @@ export const authStyles = {
 	},
 
 	formContainer: {
-		maxW: '400px',
+		maxW: '500px',
 		mx: 'auto',
 		bg: 'white',
-		borderRadius: 'md',
 		border: '1px solid',
 		borderColor: 'gray.200',
 		p: { base: 6, md: 8 },
@@ -24,7 +23,7 @@ export const authStyles = {
 		fontWeight: '600',
 		textAlign: 'center' as const,
 		color: 'gray.900',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 2,
 	},
 
@@ -32,7 +31,7 @@ export const authStyles = {
 		fontSize: 'sm',
 		color: 'gray.600',
 		textAlign: 'center' as const,
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 6,
 	},
 
@@ -45,13 +44,13 @@ export const authStyles = {
 	inputField: {
 		border: '1px solid',
 		borderColor: 'gray.300',
-		borderRadius: 'md',
+		borderRadius: 'none',
 		h: '44px',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+		w: 'full',
 		fontSize: 'sm',
 		_hover: { borderColor: 'gray.400' },
 		_focus: {
-			borderColor: 'blue.500',
+			borderColor: 'black',
 			boxShadow: '0 0 0 1px var(--chakra-colors-blue-500)',
 			outline: 'none',
 		},
@@ -61,7 +60,7 @@ export const authStyles = {
 		fontSize: 'sm',
 		fontWeight: '500',
 		color: 'gray.700',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 2,
 	},
 
@@ -71,8 +70,8 @@ export const authStyles = {
 		h: '48px',
 		bg: 'black',
 		color: 'white',
-		borderRadius: 'md',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+		borderRadius: 'none',
+
 		fontWeight: '500',
 		fontSize: 'sm',
 		_hover: { bg: 'gray.800' },
@@ -88,7 +87,7 @@ export const authStyles = {
 		bg: 'white',
 		color: 'gray.700',
 		borderRadius: 'md',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		fontWeight: '500',
 		fontSize: 'sm',
 		_hover: { bg: 'gray.50', borderColor: 'gray.400' },
@@ -98,7 +97,7 @@ export const authStyles = {
 	linkText: {
 		color: 'blue.600',
 		fontWeight: '500',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		_hover: { textDecoration: 'underline' },
 	},
 
@@ -110,19 +109,16 @@ export const authStyles = {
 	checkboxLabel: {
 		fontSize: 'sm',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	errorText: {
 		fontSize: 'sm',
 		color: 'red.500',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	successText: {
 		fontSize: 'sm',
 		color: 'green.500',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	passwordToggle: {
@@ -137,6 +133,9 @@ export const authStyles = {
 	},
 
 	inputGroup: {
+		w: 'full',
+		gap: 2,
+		align: 'center',
 		position: 'relative' as const,
 	},
 };

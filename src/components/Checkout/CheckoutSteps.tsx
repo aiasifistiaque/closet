@@ -38,15 +38,13 @@ const CheckoutSteps = ({ currentStep = 0 }) => {
 						alignItems='center'
 						justifyContent='center'
 						fontSize='sm'
-						fontWeight='600'
-						fontFamily='"Zalando Sans Expanded", sans-serif'>
+						fontWeight='600'>
 						{index + 1}
 					</Box>
 					<Text
 						fontSize='sm'
 						fontWeight={index === currentStep ? '600' : '400'}
 						color={index <= currentStep ? 'gray.900' : 'gray.500'}
-						fontFamily='"Zalando Sans Expanded", sans-serif'
 						display={{ base: 'none', md: 'block' }}>
 						{step.title}
 					</Text>

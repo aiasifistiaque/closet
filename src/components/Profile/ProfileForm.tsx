@@ -35,8 +35,7 @@ export default function ProfileForm({
 				<Text {...profileStyles.sectionHeading}>Personal Information</Text>
 				<Text
 					fontSize='sm'
-					color='gray.600'
-					fontFamily='"Zalando Sans Expanded", sans-serif'>
+					color='gray.600'>
 					Manage your account details and preferences
 				</Text>
 			</Box>

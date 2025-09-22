@@ -90,7 +90,6 @@ export default function OrderSummary() {
 				<Text
 					fontSize='lg'
 					fontWeight='600'
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					color='gray.900'>
 					Order Summary
 				</Text>
@@ -106,11 +105,7 @@ export default function OrderSummary() {
 						py={8}
 						color='gray.500'>
 						<LuShoppingCart size={48} />
-						<Text
-							mt={4}
-							fontFamily='"Zalando Sans Expanded", sans-serif'>
-							Your cart is empty
-						</Text>
+						<Text mt={4}>Your cart is empty</Text>
 					</Flex>
 				) : (
 					<VStack
@@ -161,7 +156,6 @@ export default function OrderSummary() {
 										<Text
 											fontSize='sm'
 											fontWeight='500'
-											fontFamily='"Zalando Sans Expanded", sans-serif'
 											color='gray.900'
 											lineHeight='1.3'>
 											{item.title}
@@ -184,7 +178,6 @@ export default function OrderSummary() {
 									<Text
 										fontSize='sm'
 										fontWeight='600'
-										fontFamily='"Zalando Sans Expanded", sans-serif'
 										color='gray.900'>
 										৳{(item.price * item.quantity).toLocaleString()}
 									</Text>
@@ -205,43 +198,31 @@ export default function OrderSummary() {
 							<HStack justify='space-between'>
 								<Text
 									fontSize='sm'
-									color='gray.600'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									color='gray.600'>
 									Subtotal
 								</Text>
-								<Text
-									fontSize='sm'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
-									৳{subtotal.toLocaleString()}
-								</Text>
+								<Text fontSize='sm'>৳{subtotal.toLocaleString()}</Text>
 							</HStack>
 
 							<HStack justify='space-between'>
 								<Text
 									fontSize='sm'
-									color='gray.600'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									color='gray.600'>
 									Shipping
 								</Text>
-								<Text
-									fontSize='sm'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
-									৳{shipping}
-								</Text>
+								<Text fontSize='sm'>৳{shipping}</Text>
 							</HStack>
 
 							{discount > 0 && (
 								<HStack justify='space-between'>
 									<Text
 										fontSize='sm'
-										color='green.600'
-										fontFamily='"Zalando Sans Expanded", sans-serif'>
+										color='green.600'>
 										Discount
 									</Text>
 									<Text
 										fontSize='sm'
-										color='green.600'
-										fontFamily='"Zalando Sans Expanded", sans-serif'>
+										color='green.600'>
 										-৳{discount.toLocaleString()}
 									</Text>
 								</HStack>
@@ -253,14 +234,12 @@ export default function OrderSummary() {
 								<Text
 									fontSize='lg'
 									fontWeight='600'
-									fontFamily='"Zalando Sans Expanded", sans-serif'
 									color='gray.900'>
 									Total
 								</Text>
 								<Text
 									fontSize='lg'
 									fontWeight='600'
-									fontFamily='"Zalando Sans Expanded", sans-serif'
 									color='gray.900'>
 									৳{grandTotal.toLocaleString()}
 								</Text>
@@ -287,7 +266,6 @@ export default function OrderSummary() {
 							bg='black'
 							color='white'
 							borderRadius='none'
-							fontFamily='"Zalando Sans Expanded", sans-serif'
 							fontWeight='500'
 							fontSize='sm'
 							loading={isProcessing}

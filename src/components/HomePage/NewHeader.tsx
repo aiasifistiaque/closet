@@ -56,8 +56,7 @@ const Header = () => {
 									fontSize={{ base: '24px', md: '28px' }}
 									fontWeight='700'
 									color='black'
-									letterSpacing='2px'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									letterSpacing='2px'>
 									CLOSET
 								</Text>
 							</Box>

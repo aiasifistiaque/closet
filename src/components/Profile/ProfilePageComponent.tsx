@@ -126,8 +126,7 @@ export default function ProfilePageComponent({
 								<Text {...profileStyles.sectionHeading}>My Orders</Text>
 								<Text
 									fontSize='sm'
-									color='gray.600'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									color='gray.600'>
 									View and track your order history
 								</Text>
 							</Box>

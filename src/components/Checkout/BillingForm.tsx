@@ -16,7 +16,6 @@ const BillingForm = () => {
 					fontSize='lg'
 					fontWeight='600'
 					mb={4}
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					color='gray.900'>
 					Contact
 				</Text>
@@ -39,7 +38,6 @@ const BillingForm = () => {
 					fontSize='lg'
 					fontWeight='600'
 					mb={4}
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					color='gray.900'>
 					Delivery
 				</Text>
@@ -56,7 +54,6 @@ const BillingForm = () => {
 						fontSize='sm'
 						fontWeight='500'
 						mb={3}
-						fontFamily='"Zalando Sans Expanded", sans-serif'
 						color='gray.700'>
 						Choose a delivery method
 					</Text>
@@ -78,15 +75,10 @@ const BillingForm = () => {
 									<HStack
 										justify='space-between'
 										w='full'>
+										<Text fontSize='sm'>Inside Dhaka</Text>
 										<Text
 											fontSize='sm'
-											fontFamily='"Zalando Sans Expanded", sans-serif'>
-											Inside Dhaka
-										</Text>
-										<Text
-											fontSize='sm'
-											fontWeight='600'
-											fontFamily='"Zalando Sans Expanded", sans-serif'>
+											fontWeight='600'>
 											৳60
 										</Text>
 									</HStack>
@@ -104,15 +96,10 @@ const BillingForm = () => {
 									<HStack
 										justify='space-between'
 										w='full'>
+										<Text fontSize='sm'>Outside Dhaka</Text>
 										<Text
 											fontSize='sm'
-											fontFamily='"Zalando Sans Expanded", sans-serif'>
-											Outside Dhaka
-										</Text>
-										<Text
-											fontSize='sm'
-											fontWeight='600'
-											fontFamily='"Zalando Sans Expanded", sans-serif'>
+											fontWeight='600'>
 											৳120
 										</Text>
 									</HStack>

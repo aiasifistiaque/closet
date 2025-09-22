@@ -15,7 +15,6 @@ const CartItems = () => {
 				<Text
 					fontSize='lg'
 					fontWeight='600'
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					color='gray.900'
 					mb={2}>
 					Cart Items ({cart.length})
@@ -23,8 +22,7 @@ const CartItems = () => {
 				{cart.length > 0 && (
 					<Text
 						fontSize='sm'
-						color='gray.600'
-						fontFamily='"Zalando Sans Expanded", sans-serif'>
+						color='gray.600'>
 						Review your items and proceed to checkout
 					</Text>
 				)}
@@ -50,13 +48,11 @@ const CartItems = () => {
 									textAlign='center'
 									mt={4}>
 									<EmptyState.Title
-										fontFamily='"Zalando Sans Expanded", sans-serif'
 										fontSize='xl'
 										color='gray.700'>
 										Your cart is empty
 									</EmptyState.Title>
 									<EmptyState.Description
-										fontFamily='"Zalando Sans Expanded", sans-serif'
 										color='gray.500'
 										mb={4}>
 										Explore our products and add items to your cart
@@ -66,7 +62,6 @@ const CartItems = () => {
 											bg='black'
 											color='white'
 											borderRadius='none'
-											fontFamily='"Zalando Sans Expanded", sans-serif'
 											fontWeight='500'
 											px={6}
 											py={3}

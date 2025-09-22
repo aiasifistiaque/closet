@@ -18,8 +18,7 @@ const InstagramFollowSection = () => {
 						fontSize={{ base: '2xl', md: '3xl', lg: '4xl' }}
 						fontWeight='600'
 						color='black'
-						letterSpacing='1px'
-						fontFamily='"Zalando Sans Expanded", sans-serif'>
+						letterSpacing='1px'>
 						#CLOSET ON INSTAGRAM
 					</Text>
 
@@ -28,8 +27,7 @@ const InstagramFollowSection = () => {
 						fontSize={{ base: 'md', md: 'lg' }}
 						color='gray.600'
 						maxW='600px'
-						lineHeight={1.6}
-						fontFamily='"Zalando Sans Expanded", sans-serif'>
+						lineHeight={1.6}>
 						Phasellus lorem malesuada ligula pulvinar commodo maecenas. Follow us for daily style
 						inspiration and the latest fashion trends.
 					</Text>
@@ -52,8 +50,7 @@ const InstagramFollowSection = () => {
 							bg: 'gray.900',
 							transform: 'translateY(0px)',
 						}}
-						transition='all 0.2s'
-						fontFamily='"Zalando Sans Expanded", sans-serif'>
+						transition='all 0.2s'>
 						FOLLOW @CLOSET
 					</Button>
 				</VStack>

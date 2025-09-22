@@ -72,8 +72,7 @@ const InstagramCarousel = () => {
 								<Text
 									color='white'
 									fontSize='lg'
-									fontWeight='bold'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									fontWeight='bold'>
 									@closet
 								</Text>
 							</Box>
@@ -102,8 +101,7 @@ const InstagramCarousel = () => {
 							bg: 'gray.900',
 							transform: 'translateY(0px)',
 						}}
-						transition='all 0.2s'
-						fontFamily='"Zalando Sans Expanded", sans-serif'>
+						transition='all 0.2s'>
 						VIEW GALLERY
 					</Button>
 				</Box>

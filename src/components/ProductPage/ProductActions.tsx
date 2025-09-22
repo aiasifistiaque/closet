@@ -26,7 +26,6 @@ const ProductActions: React.FC<ProductActionsProps> = ({
 				h='48px'
 				bg={isInCart ? 'green.500' : 'black'}
 				color='white'
-				fontFamily='"Zalando Sans Expanded", sans-serif'
 				fontWeight='500'
 				fontSize='sm'
 				textTransform='uppercase'

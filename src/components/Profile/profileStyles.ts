@@ -27,7 +27,6 @@ export const profileStyles = {
 	},
 
 	tab: {
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 		fontWeight: '500',
 		fontSize: 'sm',
 		color: 'gray.600',
@@ -54,7 +53,7 @@ export const profileStyles = {
 		fontSize: { base: 'lg', md: 'xl' },
 		fontWeight: '600',
 		color: 'gray.900',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 6,
 	},
 
@@ -62,7 +61,7 @@ export const profileStyles = {
 		fontSize: 'sm',
 		fontWeight: '500',
 		color: 'gray.700',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 2,
 	},
 
@@ -70,7 +69,7 @@ export const profileStyles = {
 		h: '44px',
 		borderColor: 'gray.300',
 		borderRadius: 'md',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		fontSize: 'sm',
 		_focus: {
 			borderColor: 'black',
@@ -87,7 +86,7 @@ export const profileStyles = {
 		bg: 'black',
 		color: 'white',
 		borderRadius: 'md',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		fontWeight: '500',
 		fontSize: 'sm',
 		_hover: { bg: 'gray.800' },
@@ -101,7 +100,7 @@ export const profileStyles = {
 		bg: 'white',
 		color: 'gray.700',
 		borderRadius: 'md',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		fontWeight: '500',
 		fontSize: 'sm',
 		_hover: { bg: 'gray.50', borderColor: 'gray.400' },
@@ -144,20 +143,17 @@ export const profileStyles = {
 		fontSize: 'sm',
 		fontWeight: '600',
 		color: 'gray.900',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	orderDate: {
 		fontSize: 'xs',
 		color: 'gray.500',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	orderTotal: {
 		fontSize: 'lg',
 		fontWeight: '600',
 		color: 'gray.900',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	// Status badges
@@ -167,7 +163,6 @@ export const profileStyles = {
 		borderRadius: 'full',
 		fontSize: 'xs',
 		fontWeight: '600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	statusConfirmed: {
@@ -239,7 +234,7 @@ export const profileStyles = {
 	userInfoLabel: {
 		fontSize: 'sm',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 1,
 	},
 
@@ -247,7 +242,6 @@ export const profileStyles = {
 		fontSize: 'sm',
 		fontWeight: '500',
 		color: 'gray.900',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	// Empty state
@@ -267,13 +261,12 @@ export const profileStyles = {
 	emptyStateText: {
 		fontSize: 'lg',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 2,
 	},
 
 	emptyStateSubtext: {
 		fontSize: 'sm',
 		color: 'gray.500',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 };

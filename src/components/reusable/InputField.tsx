@@ -13,7 +13,6 @@ export const InputField = ({ label, placeholder, isRequired, type = 'text' }: In
 		<Field.Root required={isRequired}>
 			<Field.Label
 				fontSize='sm'
-				fontFamily='"Zalando Sans Expanded", sans-serif'
 				fontWeight='500'
 				color='gray.700'
 				mb={2}>
@@ -26,7 +25,6 @@ export const InputField = ({ label, placeholder, isRequired, type = 'text' }: In
 					borderColor='gray.300'
 					borderRadius='none'
 					minH='100px'
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontSize='sm'
 					_hover={{ borderColor: 'gray.400' }}
 					_focus={{
@@ -42,7 +40,6 @@ export const InputField = ({ label, placeholder, isRequired, type = 'text' }: In
 					border='1px solid'
 					borderColor='gray.300'
 					borderRadius='none'
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontSize='sm'
 					h='44px'
 					_hover={{ borderColor: 'gray.400' }}

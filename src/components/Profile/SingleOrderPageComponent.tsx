@@ -182,8 +182,7 @@ export default function SingleOrderPageComponent({
 								<Button
 									variant='ghost'
 									size='sm'
-									onClick={handleBackClick}
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									onClick={handleBackClick}>
 									<HStack gap={2}>
 										<ArrowLeft size={16} />
 										<Text>Back to Orders</Text>
@@ -205,8 +204,7 @@ export default function SingleOrderPageComponent({
 										flexWrap='wrap'>
 										<Text
 											fontSize='sm'
-											color='gray.600'
-											fontFamily='"Zalando Sans Expanded", sans-serif'>
+											color='gray.600'>
 											<strong>Order:</strong> {order.orderNumber}
 										</Text>
 										<HStack gap={1}>
@@ -216,8 +214,7 @@ export default function SingleOrderPageComponent({
 											/>
 											<Text
 												fontSize='sm'
-												color='gray.600'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.600'>
 												{new Date(order.date).toLocaleDateString('en-US', {
 													year: 'numeric',
 													month: 'long',
@@ -271,8 +268,7 @@ export default function SingleOrderPageComponent({
 										<Text
 											fontSize='lg'
 											fontWeight='600'
-											color='gray.900'
-											fontFamily='"Zalando Sans Expanded", sans-serif'>
+											color='gray.900'>
 											Order Status
 										</Text>
 										<HStack gap={3}>
@@ -291,8 +287,7 @@ export default function SingleOrderPageComponent({
 											/>
 											<Text
 												fontSize='sm'
-												color='gray.700'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.700'>
 												<strong>
 													{order.status === 'delivered' ? 'Delivered on:' : 'Expected delivery:'}
 												</strong>{' '}
@@ -311,8 +306,7 @@ export default function SingleOrderPageComponent({
 											/>
 											<Text
 												fontSize='sm'
-												color='gray.700'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.700'>
 												<strong>Tracking Number:</strong> {order.trackingNumber}
 											</Text>
 										</HStack>
@@ -325,7 +319,6 @@ export default function SingleOrderPageComponent({
 										fontSize='lg'
 										fontWeight='600'
 										color='gray.900'
-										fontFamily='"Zalando Sans Expanded", sans-serif'
 										mb={4}>
 										Order Items
 									</Text>
@@ -361,8 +354,7 @@ export default function SingleOrderPageComponent({
 														<Text
 															fontSize='md'
 															fontWeight='500'
-															color='gray.900'
-															fontFamily='"Zalando Sans Expanded", sans-serif'>
+															color='gray.900'>
 															{item.name}
 														</Text>
 														<HStack
@@ -371,23 +363,20 @@ export default function SingleOrderPageComponent({
 															{item.size && (
 																<Text
 																	fontSize='sm'
-																	color='gray.600'
-																	fontFamily='"Zalando Sans Expanded", sans-serif'>
+																	color='gray.600'>
 																	Size: {item.size}
 																</Text>
 															)}
 															{item.color && (
 																<Text
 																	fontSize='sm'
-																	color='gray.600'
-																	fontFamily='"Zalando Sans Expanded", sans-serif'>
+																	color='gray.600'>
 																	Color: {item.color}
 																</Text>
 															)}
 															<Text
 																fontSize='sm'
-																color='gray.600'
-																fontFamily='"Zalando Sans Expanded", sans-serif'>
+																color='gray.600'>
 																Qty: {item.quantity}
 															</Text>
 														</HStack>
@@ -399,15 +388,13 @@ export default function SingleOrderPageComponent({
 														<Text
 															fontSize='lg'
 															fontWeight='600'
-															color='gray.900'
-															fontFamily='"Zalando Sans Expanded", sans-serif'>
+															color='gray.900'>
 															৳{item.price.toLocaleString()}
 														</Text>
 														{item.quantity > 1 && (
 															<Text
 																fontSize='sm'
-																color='gray.600'
-																fontFamily='"Zalando Sans Expanded", sans-serif'>
+																color='gray.600'>
 																৳{(item.price / item.quantity).toLocaleString()} each
 															</Text>
 														)}
@@ -429,7 +416,6 @@ export default function SingleOrderPageComponent({
 										fontSize='lg'
 										fontWeight='600'
 										color='gray.900'
-										fontFamily='"Zalando Sans Expanded", sans-serif'
 										mb={4}>
 										Order Summary
 									</Text>
@@ -442,15 +428,13 @@ export default function SingleOrderPageComponent({
 											align='center'>
 											<Text
 												fontSize='sm'
-												color='gray.600'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.600'>
 												Subtotal
 											</Text>
 											<Text
 												fontSize='sm'
 												fontWeight='500'
-												color='gray.900'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.900'>
 												৳{order.subtotal.toLocaleString()}
 											</Text>
 										</Flex>
@@ -460,15 +444,13 @@ export default function SingleOrderPageComponent({
 											align='center'>
 											<Text
 												fontSize='sm'
-												color='gray.600'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.600'>
 												Shipping
 											</Text>
 											<Text
 												fontSize='sm'
 												fontWeight='500'
-												color='gray.900'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.900'>
 												৳{order.shipping.toLocaleString()}
 											</Text>
 										</Flex>
@@ -479,15 +461,13 @@ export default function SingleOrderPageComponent({
 												align='center'>
 												<Text
 													fontSize='sm'
-													color='gray.600'
-													fontFamily='"Zalando Sans Expanded", sans-serif'>
+													color='gray.600'>
 													Tax
 												</Text>
 												<Text
 													fontSize='sm'
 													fontWeight='500'
-													color='gray.900'
-													fontFamily='"Zalando Sans Expanded", sans-serif'>
+													color='gray.900'>
 													৳{order.tax.toLocaleString()}
 												</Text>
 											</Flex>
@@ -501,15 +481,13 @@ export default function SingleOrderPageComponent({
 											<Text
 												fontSize='md'
 												fontWeight='600'
-												color='gray.900'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.900'>
 												Total
 											</Text>
 											<Text
 												fontSize='md'
 												fontWeight='600'
-												color='gray.900'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.900'>
 												৳{order.total.toLocaleString()}
 											</Text>
 										</Flex>
@@ -522,7 +500,6 @@ export default function SingleOrderPageComponent({
 										fontSize='lg'
 										fontWeight='600'
 										color='gray.900'
-										fontFamily='"Zalando Sans Expanded", sans-serif'
 										mb={4}>
 										Payment Information
 									</Text>
@@ -541,14 +518,12 @@ export default function SingleOrderPageComponent({
 												<Text
 													fontSize='sm'
 													fontWeight='500'
-													color='gray.900'
-													fontFamily='"Zalando Sans Expanded", sans-serif'>
+													color='gray.900'>
 													Payment Method
 												</Text>
 												<Text
 													fontSize='sm'
-													color='gray.600'
-													fontFamily='"Zalando Sans Expanded", sans-serif'>
+													color='gray.600'>
 													{order.paymentMethod}
 												</Text>
 											</VStack>
@@ -575,7 +550,6 @@ export default function SingleOrderPageComponent({
 										fontSize='lg'
 										fontWeight='600'
 										color='gray.900'
-										fontFamily='"Zalando Sans Expanded", sans-serif'
 										mb={4}>
 										Shipping Address
 									</Text>
@@ -596,26 +570,22 @@ export default function SingleOrderPageComponent({
 												<Text
 													fontSize='sm'
 													fontWeight='500'
-													color='gray.900'
-													fontFamily='"Zalando Sans Expanded", sans-serif'>
+													color='gray.900'>
 													{order.shippingAddress.name}
 												</Text>
 												<Text
 													fontSize='sm'
-													color='gray.600'
-													fontFamily='"Zalando Sans Expanded", sans-serif'>
+													color='gray.600'>
 													{order.shippingAddress.address}
 												</Text>
 												<Text
 													fontSize='sm'
-													color='gray.600'
-													fontFamily='"Zalando Sans Expanded", sans-serif'>
+													color='gray.600'>
 													{order.shippingAddress.city}, {order.shippingAddress.postalCode}
 												</Text>
 												<Text
 													fontSize='sm'
-													color='gray.600'
-													fontFamily='"Zalando Sans Expanded", sans-serif'>
+													color='gray.600'>
 													{order.shippingAddress.country}
 												</Text>
 											</VStack>
@@ -628,8 +598,7 @@ export default function SingleOrderPageComponent({
 											/>
 											<Text
 												fontSize='sm'
-												color='gray.600'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.600'>
 												{order.shippingAddress.phone}
 											</Text>
 										</HStack>
@@ -642,7 +611,6 @@ export default function SingleOrderPageComponent({
 										fontSize='lg'
 										fontWeight='600'
 										color='gray.900'
-										fontFamily='"Zalando Sans Expanded", sans-serif'
 										mb={4}>
 										Need Help?
 									</Text>
@@ -657,8 +625,7 @@ export default function SingleOrderPageComponent({
 											/>
 											<Text
 												fontSize='sm'
-												color='gray.600'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.600'>
 												+880 1700-000000
 											</Text>
 										</HStack>
@@ -669,8 +636,7 @@ export default function SingleOrderPageComponent({
 											/>
 											<Text
 												fontSize='sm'
-												color='gray.600'
-												fontFamily='"Zalando Sans Expanded", sans-serif'>
+												color='gray.600'>
 												support@closet.com.bd
 											</Text>
 										</HStack>

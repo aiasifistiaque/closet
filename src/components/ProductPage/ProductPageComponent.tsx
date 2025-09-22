@@ -29,8 +29,7 @@ const ProductPageComponent: FC = () => {
 					<HStack
 						gap={2}
 						fontSize='xs'
-						color='gray.600'
-						fontFamily='"Zalando Sans Expanded", sans-serif'>
+						color='gray.600'>
 						<Text
 							_hover={{ color: 'black' }}
 							cursor='pointer'>

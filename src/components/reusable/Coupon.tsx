@@ -5,15 +5,14 @@ import { colors } from '../data/color';
 const Coupon = () => {
 	return (
 		<Box
-			border={`1px solid ${colors.blackBorder}`}
-			borderRadius='none'
+			border={`1px solid`}
+			borderColor='gray.200'
 			p={6}
 			mt={6}
 			bg={colors.whiteBg}>
 			<Text
-				fontSize='md'
-				fontWeight='600'
-				fontFamily='"Zalando Sans Expanded", sans-serif'
+				fontSize='sm'
+				fontWeight='500'
 				color='gray.900'
 				mb={4}>
 				Promo Code
@@ -23,7 +22,6 @@ const Coupon = () => {
 					placeholder='Enter Coupon Code'
 					border={`1px solid ${colors.blackBorder}`}
 					borderRadius='none'
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontSize='sm'
 					h='44px'
 					flex='1'
@@ -38,7 +36,6 @@ const Coupon = () => {
 					borderRadius='none'
 					bg='black'
 					color='white'
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontWeight='500'
 					px={6}
 					h='44px'

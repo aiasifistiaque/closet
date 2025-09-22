@@ -119,8 +119,7 @@ const FullscreenImageModal: React.FC<FullscreenImageModalProps> = ({
 					color='white'
 					px={4}
 					py={2}
-					fontSize='sm'
-					fontFamily='"Zalando Sans Expanded", sans-serif'>
+					fontSize='sm'>
 					{currentIndex + 1} / {images.length}
 				</Box>
 			)}

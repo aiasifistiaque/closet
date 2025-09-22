@@ -22,7 +22,7 @@ export const categoriesPageStyles = {
 		fontSize: { base: '3xl', md: '4xl', lg: '5xl' },
 		fontWeight: '600',
 		color: 'black',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		letterSpacing: '-0.025em',
 		mb: 4,
 	},
@@ -30,7 +30,7 @@ export const categoriesPageStyles = {
 	pageSubtitle: {
 		fontSize: { base: 'md', md: 'lg' },
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: { base: 6, md: 8 },
 	},
 
@@ -44,7 +44,7 @@ export const categoriesPageStyles = {
 	breadcrumbText: {
 		fontSize: 'xs',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		_hover: { color: 'black' },
 		cursor: 'pointer',
 	},
@@ -53,7 +53,6 @@ export const categoriesPageStyles = {
 		fontSize: 'xs',
 		color: 'black',
 		fontWeight: '500',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	// Sort and filter controls
@@ -68,7 +67,6 @@ export const categoriesPageStyles = {
 	resultsInfo: {
 		fontSize: 'sm',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	resultCount: {
@@ -89,7 +87,7 @@ export const categoriesPageStyles = {
 	sortButton: {
 		bg: 'transparent',
 		border: 'none',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		fontWeight: '500',
 		fontSize: 'sm',
 		color: 'black',
@@ -155,7 +153,7 @@ export const categoriesPageStyles = {
 		fontWeight: '400',
 		color: 'black',
 		textTransform: 'uppercase',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 0,
 		lineHeight: 'tight',
 	},
@@ -164,7 +162,7 @@ export const categoriesPageStyles = {
 		fontSize: { base: 'xs', md: '12px' },
 		color: 'black',
 		fontWeight: '300',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 2,
 		letterSpacing: '1px',
 		lineHeight: 'short',
@@ -173,7 +171,6 @@ export const categoriesPageStyles = {
 	categoryStats: {
 		fontSize: 'xs',
 		color: 'black',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	// View toggle (grid/list)
@@ -195,7 +192,6 @@ export const categoriesPageStyles = {
 		borderRadius: 'sm',
 		cursor: 'pointer',
 		transition: 'all 0.2s ease-in-out',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	viewToggleButtonActive: {
@@ -220,13 +216,12 @@ export const categoriesPageStyles = {
 		fontSize: 'xl',
 		fontWeight: '600',
 		color: 'black',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 2,
 	},
 
 	emptyStateText: {
 		fontSize: 'md',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 };

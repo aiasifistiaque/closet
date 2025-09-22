@@ -5,45 +5,49 @@ import { Box, Grid, Text, Image, Container } from '@chakra-ui/react';
 
 const categories = [
 	{
-		id: 'women',
-		title: 'WOMEN',
+		_id: 'women',
+		name: 'WOMEN',
 		image: '/category/cat-modest-wear.jpg',
 		description: 'Discover our latest collection',
 	},
 	{
-		id: 'men',
-		title: 'MEN',
+		_id: 'men',
+		name: 'MEN',
 		image: '/product/p-watch1.jpg',
 		description: 'Stylish pieces for every occasion',
 	},
 	{
-		id: 'shoes',
-		title: 'SHOES',
+		_id: 'shoes',
+		name: 'SHOES',
 		image: '/category/shoes.svg',
 		description: 'Step into style',
 	},
 	{
-		id: 'accessories',
-		title: 'ACCESSORIES',
+		_id: 'accessories',
+		name: 'ACCESSORIES',
 		image: '/category/cat-accessories.jpg',
 		description: 'Complete your look',
 	},
 	{
-		id: 'bags',
-		title: 'BAGS',
+		_id: 'bags',
+		name: 'BAGS',
 		image: '/category/cat-bag.jpg',
 		description: 'Carry in style',
 	},
 	{
-		id: 'jewelry',
-		title: 'JEWELRY',
+		_id: 'jewelry',
+		name: 'JEWELRY',
 		image: '/category/cat-jewelry.jpg',
 		description: 'Shine bright',
 	},
 ];
 
-const CategoryCard = ({ category }: { category: (typeof categories)[0] }) => (
-	<Link href={`/category/${category.id}`}>
+const CategoryCard = ({
+	category,
+}: {
+	category: { _id: string; name: string; image: string; description: string };
+}) => (
+	<Link href={`/category/${category._id}`}>
 		<Box
 			position='relative'
 			overflow='hidden'
@@ -64,8 +68,8 @@ const CategoryCard = ({ category }: { category: (typeof categories)[0] }) => (
 				h='220px'
 				overflow='hidden'>
 				<Image
-					src={category.image}
-					alt={category.title}
+					src={category?.image}
+					alt={category?.name}
 					objectFit='cover'
 					w='full'
 					h='full'
@@ -87,20 +91,18 @@ const CategoryCard = ({ category }: { category: (typeof categories)[0] }) => (
 				textAlign='center'
 				bg='white'>
 				<Text
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontSize='md'
 					fontWeight='600'
 					color='gray.900'
-					letterSpacing='wider'
+					letterSpacing='w_ider'
 					mb={1}>
-					{category.title}
+					{category?.name}
 				</Text>
 				<Text
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontSize='xs'
 					color='gray.600'
 					lineHeight='1.4'>
-					{category.description}
+					{category?.description}
 				</Text>
 			</Box>
 		</Box>
@@ -109,13 +111,13 @@ const CategoryCard = ({ category }: { category: (typeof categories)[0] }) => (
 
 const CategoryGridNew = () => (
 	<Container
-		px={{ base: 4, md: 7, lg: 20, '2xl': 20 }}
-		py={16}>
+		px={{ base: 4, md: 7, lg: '92px', '2xl': 20 }}
+		py={16}
+		pb={{ base: 4, md: 16 }}>
 		<Box
 			textAlign='center'
 			mb={12}>
 			<Text
-				fontFamily='"Zalando Sans Expanded", sans-serif'
 				fontSize={{ base: '2xl', md: '3xl' }}
 				fontWeight='500'
 				color='gray.900'
@@ -124,10 +126,10 @@ const CategoryGridNew = () => (
 				SHOP BY CATEGORY
 			</Text>
 			<Text
-				fontFamily='"Zalando Sans Expanded", sans-serif'
-				fontSize='md'
+				fontSize='sm'
 				color='gray.600'
 				maxW='500px'
+				letterSpacing='.5px'
 				mx='auto'
 				lineHeight='1.6'>
 				Discover our curated collections designed for every style and occasion
@@ -139,11 +141,11 @@ const CategoryGridNew = () => (
 				base: 'repeat(2, 1fr)',
 				md: 'repeat(3, 1fr)',
 			}}
-			gap={6}
+			gap={{ base: 2, md: 4 }}
 			role='group'>
-			{categories.map(category => (
+			{categories?.map(category => (
 				<CategoryCard
-					key={category.id}
+					key={category?._id}
 					category={category}
 				/>
 			))}

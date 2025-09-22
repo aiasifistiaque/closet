@@ -105,8 +105,7 @@ export default function OrderCard({ order, onClick }: OrderCardProps) {
 							gap={0}>
 							<Text
 								fontSize='xs'
-								color='gray.600'
-								fontFamily='"Zalando Sans Expanded", sans-serif'>
+								color='gray.600'>
 								Total Amount
 							</Text>
 							<Text {...profileStyles.orderTotal}>৳{order.total.toLocaleString()}</Text>
@@ -117,8 +116,7 @@ export default function OrderCard({ order, onClick }: OrderCardProps) {
 							gap={0}>
 							<Text
 								fontSize='xs'
-								color='gray.600'
-								fontFamily='"Zalando Sans Expanded", sans-serif'>
+								color='gray.600'>
 								Items
 							</Text>
 							<HStack gap={1}>
@@ -146,8 +144,7 @@ export default function OrderCard({ order, onClick }: OrderCardProps) {
 							<HStack gap={2}>
 								<Text
 									fontSize='xs'
-									color='gray.600'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									color='gray.600'>
 									Status:
 								</Text>
 								<Badge {...getStatusColor(order.status)}>{formatStatus(order.status)}</Badge>
@@ -160,8 +157,7 @@ export default function OrderCard({ order, onClick }: OrderCardProps) {
 								/>
 								<Text
 									fontSize='xs'
-									color='gray.600'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									color='gray.600'>
 									Payment:
 								</Text>
 								<Badge {...getPaymentStatusColor(order.paymentStatus)}>
@@ -183,8 +179,7 @@ export default function OrderCard({ order, onClick }: OrderCardProps) {
 								borderColor='blue.200'>
 								<Text
 									fontSize='xs'
-									color='blue.700'
-									fontFamily='"Zalando Sans Expanded", sans-serif'>
+									color='blue.700'>
 									<strong>Estimated Delivery:</strong> {order.estimatedDelivery}
 								</Text>
 							</Box>

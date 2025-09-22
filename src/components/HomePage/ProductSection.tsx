@@ -54,23 +54,25 @@ const ProductSection: React.FC<ProductSectionProps> = ({
 				<Flex
 					justify='space-between'
 					align='center'
+					textAlign={{ base: 'center', md: 'left' }}
 					mb={8}
 					direction={{ base: 'column', md: 'row' }}
 					gap={4}>
 					<Box>
 						<Text
+							textAlign={{ base: 'center', md: 'left' }}
 							fontSize={{ base: '2xl', md: '3xl' }}
 							fontWeight='600'
 							color='black'
-							mb={2}
-							fontFamily='"Zalando Sans Expanded", sans-serif'>
+							mb={2}>
 							{title}
 						</Text>
 						{subtitle && (
 							<Text
-								fontSize='md'
-								color='gray.600'
-								fontFamily='"Zalando Sans Expanded", sans-serif'>
+								textAlign={{ base: 'center', md: 'left' }}
+								fontSize='sm'
+								letterSpacing='.5px'
+								color='gray.600'>
 								{subtitle}
 							</Text>
 						)}
@@ -82,14 +84,15 @@ const ProductSection: React.FC<ProductSectionProps> = ({
 								variant='outline'
 								borderColor='black'
 								color='black'
-								fontWeight='500'
+								size='sm'
+								fontWeight='300'
+								fontSize='12px'
 								letterSpacing='1px'
 								borderRadius='none'
 								_hover={{
 									bg: 'black',
 									color: 'white',
-								}}
-								fontFamily='"Zalando Sans Expanded", sans-serif'>
+								}}>
 								VIEW ALL
 							</Button>
 						</Link>

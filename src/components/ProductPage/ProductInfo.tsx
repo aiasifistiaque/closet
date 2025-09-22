@@ -21,7 +21,6 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 					textTransform='uppercase'
 					letterSpacing='wider'
 					fontWeight='500'
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					mb={2}>
 					{product.brand}
 				</Text>
@@ -30,7 +29,6 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 			{/* Product Title */}
 			<Heading
 				size='lg'
-				fontFamily='"Zalando Sans Expanded", sans-serif'
 				fontWeight='500'
 				lineHeight='1.3'
 				color='gray.900'
@@ -45,8 +43,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 				<Text
 					fontSize='xl'
 					fontWeight='600'
-					color='black'
-					fontFamily='"Zalando Sans Expanded", sans-serif'>
+					color='black'>
 					৳ {product.price.toLocaleString()}
 				</Text>
 				{product.oldPrice && (
@@ -54,8 +51,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 						<Text
 							fontSize='lg'
 							color='gray.400'
-							textDecoration='line-through'
-							fontFamily='"Zalando Sans Expanded", sans-serif'>
+							textDecoration='line-through'>
 							৳ {product.oldPrice.toLocaleString()}
 						</Text>
 						{discountPercentage > 0 && (
@@ -79,7 +75,6 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 					fontSize='sm'
 					color='gray.600'
 					lineHeight='1.5'
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					mb={3}>
 					{product.shortDescription}
 				</Text>
@@ -92,7 +87,6 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 					<Text
 						fontSize='xs'
 						color='gray.500'
-						fontFamily='"Zalando Sans Expanded", sans-serif'
 						mb={1}>
 						<Text
 							as='span'
@@ -107,7 +101,6 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 				<Text
 					fontSize='xs'
 					color={product.inStock ? 'green.600' : 'red.600'}
-					fontFamily='"Zalando Sans Expanded", sans-serif'
 					fontWeight='500'
 					textTransform='uppercase'
 					letterSpacing='0.5px'>
@@ -120,8 +113,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 				<Text
 					fontSize='sm'
 					color='gray.700'
-					lineHeight='1.6'
-					fontFamily='"Zalando Sans Expanded", sans-serif'>
+					lineHeight='1.6'>
 					Premium quality materials with exceptional comfort and durability.
 					<br />
 					Perfect for everyday wear with a modern, sophisticated design.
@@ -135,8 +127,7 @@ const ProductInfo: React.FC<ProductInfoProps> = ({ product }) => {
 				<Text
 					fontSize='sm'
 					color='gray.700'
-					lineHeight='1.6'
-					fontFamily='"Zalando Sans Expanded", sans-serif'>
+					lineHeight='1.6'>
 					{product.description}
 				</Text>
 			)}

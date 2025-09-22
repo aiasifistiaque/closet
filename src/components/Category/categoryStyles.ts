@@ -25,7 +25,7 @@ export const categoryStyles = {
 	breadcrumbText: {
 		fontSize: 'xs',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		_hover: { color: 'black' },
 		cursor: 'pointer',
 	},
@@ -34,7 +34,6 @@ export const categoryStyles = {
 		fontSize: 'xs',
 		color: 'black',
 		fontWeight: '500',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	// Header section
@@ -47,7 +46,7 @@ export const categoryStyles = {
 		fontSize: { base: '2xl', md: '3xl', lg: '4xl' },
 		fontWeight: '600',
 		color: 'black',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		letterSpacing: '-0.025em',
 		mb: 2,
 		textAlign: 'left', // Left align title
@@ -56,7 +55,7 @@ export const categoryStyles = {
 	categorySubtitle: {
 		fontSize: { base: 'sm', md: 'md' },
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: { base: 4, md: 6 },
 		textAlign: 'left', // Left align subtitle
 	},
@@ -73,7 +72,7 @@ export const categoryStyles = {
 		borderRadius: 'md',
 		px: 4,
 		py: 3,
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		fontWeight: '500',
 		fontSize: 'sm',
 		color: 'black',
@@ -98,7 +97,7 @@ export const categoryStyles = {
 	sortButton: {
 		bg: 'transparent',
 		border: 'none',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		fontWeight: '500',
 		fontSize: 'sm',
 		color: 'black',
@@ -130,7 +129,7 @@ export const categoryStyles = {
 		fontSize: 'sm',
 		fontWeight: '600',
 		color: 'black',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 3,
 	},
 
@@ -138,7 +137,7 @@ export const categoryStyles = {
 		fontSize: 'xs',
 		color: 'black',
 		fontWeight: '300',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		_hover: { color: 'black' },
 	},
 
@@ -169,7 +168,6 @@ export const categoryStyles = {
 	resultsText: {
 		fontSize: 'sm',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 
 	resultCount: {
@@ -208,13 +206,12 @@ export const categoryStyles = {
 		fontSize: 'xl',
 		fontWeight: '600',
 		color: 'black',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 		mb: 2,
 	},
 
 	emptyStateText: {
 		fontSize: 'md',
 		color: 'gray.600',
-		fontFamily: '"Zalando Sans Expanded", sans-serif',
 	},
 };

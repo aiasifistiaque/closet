@@ -125,7 +125,7 @@ const CategoryPageComponent: FC<CategoryPageComponentProps> = ({}) => {
 										style={{
 											background: 'transparent',
 											border: 'none',
-											fontFamily: '"Zalando Sans Expanded", sans-serif',
+
 											fontSize: '14px',
 											fontWeight: '500',
 											color: 'black',
